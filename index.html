@@ -1,0 +1,969 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome/all.min.css">
+    <script src="js/mobile-nav.js"></script>
+    
+    <style>
+        ::webkit-scrollbar { display: none; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(207, 32, 48, 0.95), rgba(207, 32, 48, 0.85)); }
+        .counter-animation { animation: countUp 2s ease-out forwards; }
+        @keyframes countUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .testimonial-slider { scroll-behavior: smooth; }
+        .sticky-header { backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.95); }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="font-custom">
+
+<!-- Header & Main Navigation -->
+<header id="header" class="sticky top-0 z-50 bg-white shadow-sm sticky-header transition-all duration-300">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-12 w-auto">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-bni-red font-semibold transition-colors duration-200">Home</a>
+                <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">About Us</a>
+                <div class="relative group">
+                    <button class="flex items-center text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">
+                        Members
+                        <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="members.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Members Directory</a>
+                        <a href="apply.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Apply</a>
+                    </div>
+                </div>
+                <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Success Stories</a>
+                <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Gallery</a>
+                <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Contact Us</a>
+            </nav>
+            
+            <!-- CTA Button -->
+            <div class="hidden lg:block">
+                <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg">
+                    Attend a Meeting
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-800 p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-bni-red font-semibold py-2">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium py-2">About Us</a>
+                    <div class="space-y-2">
+                        <div class="text-gray-800 font-medium py-2">Members</div>
+                        <div class="pl-4 space-y-2">
+                            <a href="members.html" class="block text-gray-700 hover:text-bni-red py-1">Members Directory</a>
+                            <a href="apply.html" class="block text-gray-700 hover:text-bni-red py-1">Apply</a>
+                        </div>
+                    </div>
+                    <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Success Stories</a>
+                    <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Contact Us</a>
+                    <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">Attend a Meeting</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero-section" class="relative h-[700px] lg:h-[800px] overflow-hidden">
+    <div class="absolute inset-0">
+        <img class="w-full h-full object-cover" src="images/hero-bg.png" alt="professional business networking meeting with diverse group of people in modern conference room, bright and welcoming atmosphere">
+        <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 h-full flex items-center">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h1 class="text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+                Welcome to BNI Tathastu
+                <span class="block text-3xl lg:text-5xl xl:text-6xl font-light mt-2">
+                    Where Givers Gain®
+                </span>
+            </h1>
+            <p class="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+                Join a dynamic, committed group of business professionals helping each other grow through the power of referrals and authentic relationships.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="visitors.html" class="bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-50 transition-colors duration-200 shadow-xl">
+                    Visit a Meeting
+                </a>
+                <a href="about.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-bni-red transition-colors duration-200">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 right-10 lg:right-20 animate-bounce">
+        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+            <i class="fa-solid fa-handshake text-bni-red text-2xl"></i>
+        </div>
+    </div>
+    <div class="absolute bottom-32 left-10 lg:left-20 animate-pulse">
+        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full backdrop-blur-sm"></div>
+    </div>
+</section>
+
+<!-- Chapter Highlights/Statistics -->
+<section id="chapter-statistics" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Impact in Numbers</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Building stronger businesses through meaningful connections and quality referrals</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-arrows-rotate text-white text-2xl"></i>
+                </div>
+                <div class="text-4xl lg:text-5xl font-bold text-bni-red mb-2 counter-animation">7,899</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Total Referrals</h3>
+                <p class="text-gray-600">Exchanged between members</p>
+            </div>
+            
+            <div class="text-center bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-briefcase text-white text-2xl"></i>
+                </div>
+                <div class="text-3xl lg:text-4xl font-bold text-bni-red mb-2 counter-animation">₹70.86 Cr</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Business Passed</h3>
+                <p class="text-gray-600">Total value generated</p>
+            </div>
+            
+            <div class="text-center bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-users text-white text-2xl"></i>
+                </div>
+                <div class="text-4xl lg:text-5xl font-bold text-bni-red mb-2 counter-animation">51</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Active Members</h3>
+                <p class="text-gray-600">Committed professionals</p>
+            </div>
+            
+            <div class="text-center bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-calendar-days text-white text-2xl"></i>
+                </div>
+                <div class="text-4xl lg:text-5xl font-bold text-bni-red mb-2 counter-animation">100+</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Meetings Held</h3>
+                <p class="text-gray-600">Since founding in 2023</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Blurb / Chapter Introduction -->
+<section id="chapter-introduction" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">About BNI Tathastu</h2>
+                <div class="prose prose-lg text-gray-600 space-y-4">
+                    <p class="text-lg leading-relaxed">
+                        BNI Tathastu is a Jaipur-based chapter of BNI, the world's leading networking organization. Our members meet weekly to exchange qualified business referrals and build lasting professional relationships.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        We embody BNI's core values: <strong class="text-bni-red">Givers Gain®</strong>, Building Relationships, Lifelong Learning, Traditions + Innovation, Positive Attitude, Accountability, and Recognition.
+                    </p>
+                    <div class="bg-white p-6 rounded-lg border-l-4 border-bni-red mt-6">
+                        <h3 class="font-semibold text-gray-900 mb-2">Our Mission</h3>
+                        <p class="text-gray-700">To help members increase their business through a structured, positive, and professional word-of-mouth program that enables them to develop long-term, meaningful relationships with quality business professionals.</p>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="about.html" class="inline-flex items-center bg-bni-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-bni-dark-red transition-colors duration-200">
+                        Learn More About Us
+                        <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="order-1 lg:order-2">
+                <div class="relative">
+                    <img class="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-xl" src="images/about-meeting.png" alt="BNI chapter meeting in progress with members sitting around conference table, professional business environment, networking atmosphere">
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-bni-red rounded-2xl flex items-center justify-center shadow-xl">
+                        <div class="text-center text-white">
+                            <div class="text-2xl font-bold">2023</div>
+                            <div class="text-sm">Founded</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Values Showcase -->
+<section id="core-values" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">The principles that guide everything we do at BNI Tathastu</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-heart text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Givers Gain®</h3>
+                <p class="text-gray-600">By giving business to others, we receive business in return</p>
+            </div>
+            
+            <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-handshake text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Building Relationships</h3>
+                <p class="text-gray-600">Strong relationships are the foundation of successful referrals</p>
+            </div>
+            
+            <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-graduation-cap text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Lifelong Learning</h3>
+                <p class="text-gray-600">Continuous education and skill development for growth</p>
+            </div>
+            
+            <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-lightbulb text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Innovation</h3>
+                <p class="text-gray-600">Balancing time-tested traditions with modern approaches</p>
+            </div>
+            
+            <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-smile text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Positive Attitude</h3>
+                <p class="text-gray-600">Maintaining optimism and enthusiasm in all interactions</p>
+            </div>
+            
+            <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-shield-halved text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Accountability</h3>
+                <p class="text-gray-600">Taking responsibility for our commitments and actions</p>
+            </div>
+            
+            <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-trophy text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Recognition</h3>
+                <p class="text-gray-600">Celebrating achievements and contributions of members</p>
+            </div>
+            
+            <div class="text-center p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-clock text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Traditions</h3>
+                <p class="text-gray-600">Honoring the proven systems that drive our success</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Members / Power Teams -->
+<section id="featured-members" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Meet Our Members</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Discover the diverse professionals who make BNI Tathastu a thriving business community</p>
+        </div>
+        
+        <!-- Featured Members Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="text-center">
+                    <img src="images/avatar-2.jpg" alt="Member Photo" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Rohit Pareta</h3>
+                    <p class="text-bni-red font-semibold mb-2">Solar Energy Solutions</p>
+                    <p class="text-gray-600 mb-4">Renewable Energy Specialist helping businesses reduce costs and carbon footprint</p>
+                    <div class="flex justify-center space-x-3">
+                        <span class="text-gray-400 hover:text-bni-red transition-colors cursor-pointer">
+                            <i class="fa-brands fa-linkedin text-xl"></i>
+                        </span>
+                        <span class="text-gray-400 hover:text-bni-red transition-colors cursor-pointer">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="text-center">
+                    <img src="images/avatar-5.jpg" alt="Member Photo" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Priya Sharma</h3>
+                    <p class="text-bni-red font-semibold mb-2">Digital Marketing Agency</p>
+                    <p class="text-gray-600 mb-4">Helping businesses grow their online presence and reach their target audience</p>
+                    <div class="flex justify-center space-x-3">
+                        <span class="text-gray-400 hover:text-bni-red transition-colors cursor-pointer">
+                            <i class="fa-brands fa-linkedin text-xl"></i>
+                        </span>
+                        <span class="text-gray-400 hover:text-bni-red transition-colors cursor-pointer">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="text-center">
+                    <img src="images/avatar-3.jpg" alt="Member Photo" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-gray-900 mb-1">Amit Gupta</h3>
+                    <p class="text-bni-red font-semibold mb-2">Financial Planning</p>
+                    <p class="text-gray-600 mb-4">Certified financial planner providing comprehensive wealth management solutions</p>
+                    <div class="flex justify-center space-x-3">
+                        <span class="text-gray-400 hover:text-bni-red transition-colors cursor-pointer">
+                            <i class="fa-brands fa-linkedin text-xl"></i>
+                        </span>
+                        <span class="text-gray-400 hover:text-bni-red transition-colors cursor-pointer">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Power Teams Section -->
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Our Power Teams</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="border border-gray-200 rounded-xl p-6 hover:border-bni-red transition-colors duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-building text-bni-red text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Infra/Interior</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">6 Members in infrastructure and interior</p>
+                    <div class="text-sm text-gray-500 space-y-1">
+                        <div>• Real Estate Commercial</div>
+                        <div>• Solar Energy Solutions</div>
+                        <div>• Architecture Services</div>
+                        <div>• Silent Generator</div>
+                        <div>• Carpentry Services</div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:border-bni-red transition-colors duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-briefcase text-bni-red text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Business</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">8 Members in business services</p>
+                    <div class="text-sm text-gray-500 space-y-1">
+                        <div>• Offset Printing</div>
+                        <div>• Digital Marketing</div>
+                        <div>• ERP Development</div>
+                        <div>• WhatsApp/SMS Services</div>
+                        <div>• Health Insurance</div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:border-bni-red transition-colors duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-building-columns text-bni-red text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Corporate</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">7 Members in corporate services</p>
+                    <div class="text-sm text-gray-500 space-y-1">
+                        <div>• Corporate Taxi Services</div>
+                        <div>• Business Training</div>
+                        <div>• Life Wellness Coaching</div>
+                        <div>• LED Board Manufacturing</div>
+                        <div>• Water Systems RO</div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:border-bni-red transition-colors duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-crown text-bni-red text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">HNI</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">8 Members in high net worth services</p>
+                    <div class="text-sm text-gray-500 space-y-1">
+                        <div>• Used Car Loans</div>
+                        <div>• Architecture Services</div>
+                        <div>• Women's Club NGO</div>
+                        <div>• Textiles</div>
+                        <div>• Wealth Management</div>
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 rounded-xl p-6 hover:border-bni-red transition-colors duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-heart text-bni-red text-xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Wedding & Events</h4>
+                    </div>
+                    <p class="text-gray-600 mb-4">8 Members in wedding and events</p>
+                    <div class="text-sm text-gray-500 space-y-1">
+                        <div>• Fine Jewellery</div>
+                        <div>• Tours & Travel</div>
+                        <div>• Wedding Planning</div>
+                        <div>• Catering Services</div>
+                        <div>• Photography</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="members.html" class="inline-flex items-center bg-bni-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-bni-dark-red transition-colors duration-200">
+                    View All Members
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Slider -->
+<section id="testimonials" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">What Our Members Say</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Real stories of growth and success from BNI Tathastu members</p>
+        </div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <div class="flex items-start mb-6">
+                        <img src="images/avatar-4.jpg" alt="Member Photo" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Rajesh Kumar</h4>
+                            <p class="text-bni-red font-medium">Construction Services</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 italic mb-6">
+                        "BNI Tathastu helped me grow my construction business by 40% in just one year through quality referrals. The relationships I've built here are invaluable."
+                    </blockquote>
+                    <div class="flex text-yellow-400">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <div class="flex items-start mb-6">
+                        <img src="images/avatar-6.jpg" alt="Member Photo" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Neha Agarwal</h4>
+                            <p class="text-bni-red font-medium">Interior Design</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 italic mb-6">
+                        "The weekly meetings and structured approach to networking has transformed how I do business. I've received over 25 qualified referrals this year!"
+                    </blockquote>
+                    <div class="flex text-yellow-400">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <div class="flex items-start mb-6">
+                        <img src="images/avatar-8.jpg" alt="Member Photo" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Vikram Singh</h4>
+                            <p class="text-bni-red font-medium">Insurance Services</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 italic mb-6">
+                        "As a visitor, I was impressed by the professionalism and genuine care members showed. Within 3 months of joining, I had my best quarter ever."
+                    </blockquote>
+                    <div class="flex text-yellow-400">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <div class="flex items-start mb-6">
+                        <img src="images/avatar-7.jpg" alt="Member Photo" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sunita Jain</h4>
+                            <p class="text-bni-red font-medium">Event Management</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 italic mb-6">
+                        "The education segments and one-to-ones have helped me understand my fellow members' businesses better, leading to more targeted referrals."
+                    </blockquote>
+                    <div class="flex text-yellow-400">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="success-stories.html" class="inline-flex items-center text-bni-red font-semibold hover:text-bni-dark-red transition-colors duration-200">
+                    Read More Success Stories
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Weekly Meeting Schedule -->
+<section id="meeting-schedule" class="py-16 lg:py-24 bg-bni-red">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">Join Our Weekly Meetings</h2>
+            <p class="text-xl text-white mb-12 opacity-90">Experience the power of structured networking every Friday morning</p>
+            
+            <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Meeting Details</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-calendar text-bni-red text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Every Friday</div>
+                                    <div class="text-gray-600">Weekly networking meetings</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-clock text-bni-red text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">7:30 AM - 10:30 AM</div>
+                                    <div class="text-gray-600">Productive morning networking</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-map-marker-alt text-bni-red text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Hotel Ramada, Jaipur</div>
+                                    <div class="text-gray-600">Tonk Road, Jaipur</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-users text-bni-red text-xl"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold text-gray-900">Visitors Welcome</div>
+                                    <div class="text-gray-600">Come as our guest</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center lg:text-left">
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">What to Expect</h4>
+                        <ul class="text-gray-600 space-y-2 mb-8">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check mr-2" style="color: #CF2030;"></i>
+                                30-second presentations
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check mr-2" style="color: #CF2030;"></i>
+                                Quality referral exchanges
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check mr-2" style="color: #CF2030;"></i>
+                                Educational segments
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check mr-2" style="color: #CF2030;"></i>
+                                Networking opportunities
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check mr-2" style="color: #CF2030;"></i>
+                                Professional breakfast
+                            </li>
+                        </ul>
+                        
+                        <div class="space-y-3">
+                            <a href="visitors.html" class="block w-full bg-bni-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-bni-dark-red transition-colors duration-200 text-center">
+                                Attend as Visitor
+                            </a>
+                            <a href="contact.html" class="block w-full border-2 border-bni-red text-bni-red px-6 py-3 rounded-lg font-semibold hover:bg-bni-red hover:text-white transition-colors duration-200 text-center">
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Upcoming Event/Meeting CTA -->
+<section id="upcoming-events" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gradient-to-r from-bni-red to-bni-dark-red rounded-2xl p-8 lg:p-12 text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="text-center mb-8">
+                        <span class="inline-block bg-white bg-opacity-20 text-white px-4 py-2 rounded-full font-semibold mb-4">
+                            Special Event
+                        </span>
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Mega Visitor Day</h2>
+                        <p class="text-xl opacity-90 mb-6">Join 100+ professionals for an open networking meeting</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2">Oct 15</div>
+                            <div class="text-lg opacity-80">2025</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2">7:30 AM</div>
+                            <div class="text-lg opacity-80">Start Time</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold mb-2">100+</div>
+                            <div class="text-lg opacity-80">Expected Attendees</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="visitors.html" class="inline-block bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg">
+                            Register Now - Free
+                        </a>
+                        <p class="text-sm opacity-80 mt-4">Limited seats available • Registration required</p>
+                    </div>
+                </div>
+                
+                <!-- Decorative Elements -->
+                <div class="absolute top-4 right-4 w-24 h-24 bg-white bg-opacity-10 rounded-full"></div>
+                <div class="absolute bottom-4 left-4 w-16 h-16 bg-white bg-opacity-10 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Stories Preview -->
+<section id="success-stories" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Success Stories</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Real business growth achieved through BNI Tathastu referrals</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-chart-line text-green-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">₹15 Lakh Contract</h3>
+                        <p class="text-gray-600">Interior Design Project</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-4">
+                    "Through a referral from our real estate member, I secured a complete interior design contract for a luxury apartment complex. The client specifically mentioned the trust factor of BNI referrals."
+                </p>
+                <div class="flex items-center">
+                    <img src="images/avatar-6.jpg" alt="Member" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <div class="font-semibold text-gray-900">Neha Agarwal</div>
+                        <div class="text-sm text-gray-600">Interior Design</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-building text-blue-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">₹50 Lakh Project</h3>
+                        <p class="text-gray-600">Commercial Construction</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-4">
+                    "A fellow BNI member referred me to their corporate client who needed a new office building. This single referral resulted in our biggest project of the year and led to three more contracts."
+                </p>
+                <div class="flex items-center">
+                    <img src="images/avatar-4.jpg" alt="Member" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <div class="font-semibold text-gray-900">Rajesh Kumar</div>
+                        <div class="text-sm text-gray-600">Construction Services</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="success-stories.html" class="inline-flex items-center bg-bni-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-bni-dark-red transition-colors duration-200">
+                View All Success Stories
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action / Join Us Banner -->
+<section id="join-us-cta" class="py-16 lg:py-24 bg-bni-red relative overflow-hidden">
+    <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-6">Ready to grow your business through referrals?</h2>
+            <p class="text-xl lg:text-2xl mb-12 opacity-90">Experience BNI Tathastu and discover the power of structured networking</p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="visitors.html" class="bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-xl">
+                    Attend a Meeting as Guest
+                </a>
+                <a href="apply.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-bni-red transition-colors duration-200">
+                    Apply for Membership
+                </a>
+            </div>
+            
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold mb-2">1 Visit</div>
+                    <p class="opacity-80">Experience our meeting</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold mb-2">2 Weeks</div>
+                    <p class="opacity-80">Application process</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold mb-2">Lifetime</div>
+                    <p class="opacity-80">Business relationships</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Background Elements -->
+    <div class="absolute top-10 right-10 w-32 h-32 bg-white bg-opacity-10 rounded-full"></div>
+    <div class="absolute bottom-10 left-10 w-24 h-24 bg-white bg-opacity-10 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full"></div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+            <!-- Chapter Contact Details -->
+            <div class="lg:col-span-2">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-16 w-auto mb-6 bg-white p-2 rounded">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-map-marker-alt text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Venue</div>
+                            <div class="text-gray-300">Hotel Ramada, Tonk Road, Jaipur</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-clock text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Time</div>
+                            <div class="text-gray-300">Fridays, 7:30 AM – 10:30 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-envelope text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Contact Email</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">info@bnitathastu.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-brands fa-whatsapp text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">WhatsApp</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">+91 98765 43210</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Home</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">About Chapter</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Members</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Events</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Success Stories</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Contact</span></li>
+                </ul>
+            </div>
+            
+            <!-- Resources & Legal -->
+            <div>
+                <h4 class="font-bold text-lg mb-4">Resources</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Visitor Information</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Membership Application</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Meeting Guidelines</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Privacy Policy</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Terms of Use</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">BNI Global</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Social Media & Bottom -->
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-youtube text-2xl"></i>
+                    </span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm">© 2025 BNI Global, LLC. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs mt-1">BNI – The world's leading referral organization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 100) {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.backgroundColor = 'white';
+        header.style.backdropFilter = 'none';
+    }
+});
+
+// Counter animation
+function animateCounters() {
+    const counters = document.querySelectorAll('.counter-animation');
+    counters.forEach(counter => {
+        const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            if (counter.textContent.includes('₹')) {
+                counter.textContent = '₹' + current.toFixed(2) + ' Cr';
+            } else if (counter.textContent.includes('+')) {
+                counter.textContent = Math.floor(current) + '+';
+            } else {
+                counter.textContent = Math.floor(current).toLocaleString();
+            }
+        }, 20);
+    });
+}
+
+// Intersection Observer for counter animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+observer.observe(document.getElementById('chapter-statistics'));
+</script>
+
+
+</body></html>

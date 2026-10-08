@@ -1,0 +1,896 @@
+﻿<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="js/mobile-nav.js"></script>`n    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style>
+        ::webkit-scrollbar { display: none; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(207, 32, 48, 0.95), rgba(207, 32, 48, 0.85)); }
+        .sticky-header { backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.95); }
+        .form-success { display: none; }
+        .form-success.show { display: block; }
+        .form-container.hide { display: none; }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="font-custom">
+
+<!-- Header & Main Navigation -->
+<header id="header" class="sticky top-0 z-50 bg-white shadow-sm sticky-header transition-all duration-300">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-12 w-auto">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Home</a>
+                <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">About Us</a>
+                <div class="relative group">
+                    <button class="flex items-center text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">
+                        Members
+                        <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="members.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Members Directory</a>
+                        <a href="apply.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Apply</a>
+                    </div>
+                </div>
+                <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Success Stories</a>
+                <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Gallery</a>
+                <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Contact Us</a>
+            </nav>
+            
+            <!-- CTA Button -->
+            <div class="hidden lg:block">
+                <span class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg cursor-pointer">
+                    Join BNI Tathastu
+                </span>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-800 p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium py-2">About Us</a>
+                    <div class="space-y-2">
+                        <div class="text-gray-800 font-medium py-2">Members</div>
+                        <div class="pl-4 space-y-2">
+                            <a href="members.html" class="block text-gray-700 hover:text-bni-red py-1">Members Directory</a>
+                            <a href="apply.html" class="block text-gray-700 hover:text-bni-red py-1">Apply</a>
+                        </div>
+                    </div>
+                    <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Success Stories</a>
+                    <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Contact Us</a>
+                    <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">Attend a Meeting</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero-section" class="relative h-[700px] lg:h-[800px] overflow-hidden">
+    <div class="absolute inset-0">
+        <img class="w-full h-full object-cover" src="images/hero-bg-visitors.png" alt="professional business networking meeting with diverse group of people shaking hands, welcoming atmosphere, bright modern conference room, smiling business professionals">
+        <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 h-full flex items-center">
+        <div class="max-w-5xl mx-auto text-center text-white">
+            <h1 class="text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+                Be Our Guest
+                <span class="block text-3xl lg:text-5xl xl:text-6xl font-light mt-2">
+                    Attend a BNI Tathastu Meeting
+                </span>
+            </h1>
+            <p class="text-xl lg:text-2xl mb-8 max-w-4xl mx-auto font-light leading-relaxed">
+                Experience a BNI Tathastu meeting and see how we generate business for each other through the power of structured referrals.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#visitor-form" class="bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-50 transition-colors duration-200 shadow-xl">
+                    Register as Visitor
+                </a>
+                <a href="#meeting-details" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-bni-red transition-colors duration-200">
+                    Meeting Details
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 right-10 lg:right-20 animate-bounce">
+        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+            <i class="fa-solid fa-handshake text-bni-red text-2xl"></i>
+        </div>
+    </div>
+    <div class="absolute bottom-32 left-10 lg:left-20 animate-pulse">
+        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full backdrop-blur-sm"></div>
+    </div>
+</section>
+
+<!-- Why Visit Section -->
+<section id="why-visit-section" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Why Visit BNI Tathastu?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Discover what makes our weekly meetings a powerful platform for business growth and professional networking</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+                <div class="order-2 lg:order-1">
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0">
+                                <i class="fa-solid fa-users text-bni-red text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Introduce Your Business to 50+ Professionals</h3>
+                                <p class="text-gray-600 leading-relaxed">Connect with committed business owners from diverse industries, each representing their professional category exclusively.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0">
+                                <i class="fa-solid fa-arrows-rotate text-bni-red text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Learn How BNI's Referral System Can Help You</h3>
+                                <p class="text-gray-600 leading-relaxed">Experience our proven Givers GainÂ® philosophy and see how quality referrals drive real business results.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0">
+                                <i class="fa-solid fa-coffee text-bni-red text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Networking Breakfast with Diverse Industries</h3>
+                                <p class="text-gray-600 leading-relaxed">Enjoy professional breakfast networking with entrepreneurs from finance, technology, healthcare, real estate, and more.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0">
+                                <i class="fa-solid fa-shield-halved text-bni-red text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">No Obligation â€“ See if BNI is Right for You</h3>
+                                <p class="text-gray-600 leading-relaxed">Visit as our guest with no pressure. Experience our culture, meet our members, and decide if BNI fits your business goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-1 lg:order-2">
+                    <div class="relative">
+                        <img class="w-full h-96 lg:h-[500px] object-cover rounded-2xl shadow-xl" src="images/meeting-image.png" alt="BNI chapter meeting in progress with members sitting around conference table, professional business breakfast environment, diverse group networking">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-bni-red rounded-2xl flex items-center justify-center shadow-xl">
+                            <div class="text-center text-white">
+                                <div class="text-2xl font-bold">50+</div>
+                                <div class="text-sm">Members</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial from Visitor -->
+            <div class="bg-gray-50 rounded-2xl p-8 lg:p-12 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <div class="w-20 h-20 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-quote-left text-bni-red text-2xl"></i>
+                    </div>
+                    <blockquote class="text-2xl lg:text-3xl font-light text-gray-900 mb-8 leading-relaxed italic">
+                        "I visited Tathastu as a guest and immediately saw the potential â€“ the energy, professionalism, and genuine care for each other's success was evident. Now I'm a proud member and my business has grown 35% through BNI referrals!"
+                    </blockquote>
+                    <div class="flex items-center justify-center">
+                        <img src="images/avatar-8.jpg" alt="Member Photo" class="w-16 h-16 rounded-full mr-4">
+                        <div class="text-left">
+                            <div class="font-bold text-gray-900 text-lg">Vikram Singh</div>
+                            <div class="text-bni-red font-semibold">Insurance Services â€¢ BNI Member since 2022</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Meeting Details Reminder -->
+<section id="meeting-details-section" class="py-16 lg:py-24 bg-bni-red">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center text-white mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Meeting Information</h2>
+                <p class="text-xl opacity-90">Join us every Friday morning for professional networking and business development</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Meeting Details</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-calendar text-bni-red text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-lg">Every Friday</div>
+                                <div class="text-gray-600">Weekly networking meetings</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-clock text-bni-red text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-lg">7:30 AM - 10:30 AM</div>
+                                <div class="text-gray-600">Come a few minutes early to network!</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-map-marker-alt text-bni-red text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-lg">Hotel Ramada, Jaipur</div>
+                                <div class="text-gray-600">Tonk Road, Jaipur, Rajasthan</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa-solid fa-user-check text-bni-red text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-900 text-lg">Pre-registration Required</div>
+                                <div class="text-gray-600">For security and headcount purposes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Location Map</h3>
+                    <div class="bg-gray-100 rounded-lg h-64 flex items-center justify-center mb-6">
+                        <div class="text-center text-gray-600">
+                            <i class="fa-solid fa-map text-4xl mb-4"></i>
+                            <p class="font-semibold">Interactive Map</p>
+                            <p class="text-sm">Hotel Ramada, Tonk Road</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <span class="flex-1 bg-bni-red text-white px-4 py-3 rounded-lg font-semibold text-center hover:bg-bni-dark-red transition-colors duration-200 cursor-pointer">
+                            Get Directions
+                        </span>
+                        <span class="flex-1 border-2 border-bni-red text-bni-red px-4 py-3 rounded-lg font-semibold text-center hover:bg-bni-red hover:text-white transition-colors duration-200 cursor-pointer">
+                            Call Venue
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Visitor Registration Form -->
+<section id="visitor-registration-form" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                <!-- Form Section -->
+                <div class="order-2 lg:order-1">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <div id="form-container" class="form-container">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">Register as Visitor</h2>
+                            <p class="text-gray-600 mb-8">Fill out the form below to attend our next meeting as our guest. We're excited to host you!</p>
+                            
+                            <form id="visitor-form" class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-900 mb-2">Full Name *</label>
+                                        <input type="text" id="name" name="name" required="" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200" placeholder="e.g., John Sharma">
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-900 mb-2">Email Address *</label>
+                                        <input type="email" id="email" name="email" required="" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200" placeholder="john@example.com">
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-900 mb-2">Phone Number *</label>
+                                        <div class="flex">
+                                            <select class="px-3 py-3 border border-gray-300 rounded-l-lg bg-gray-50 text-gray-700">
+                                                <option value="+91">+91</option>
+                                                <option value="+1">+1</option>
+                                                <option value="+44">+44</option>
+                                            </select>
+                                            <input type="tel" id="phone" name="phone" required="" class="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200" placeholder="98765 43210">
+                                        </div>
+                                        <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-900 mb-2">Company Name</label>
+                                        <input type="text" id="company" name="company" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200" placeholder="Your Company Ltd.">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-900 mb-2">Your Industry/Profession *</label>
+                                    <select id="industry" name="industry" required="" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200">
+                                        <option value="">Select your profession</option>
+                                        <option value="Accounting">Accounting</option>
+                                        <option value="Advertising">Advertising</option>
+                                        <option value="Architecture">Architecture</option>
+                                        <option value="Banking">Banking</option>
+                                        <option value="Construction">Construction</option>
+                                        <option value="Consulting">Consulting</option>
+                                        <option value="Digital Marketing">Digital Marketing</option>
+                                        <option value="Education">Education</option>
+                                        <option value="Event Management">Event Management</option>
+                                        <option value="Financial Planning">Financial Planning</option>
+                                        <option value="Healthcare">Healthcare</option>
+                                        <option value="Insurance">Insurance</option>
+                                        <option value="Interior Design">Interior Design</option>
+                                        <option value="IT Services">IT Services</option>
+                                        <option value="Legal Services">Legal Services</option>
+                                        <option value="Manufacturing">Manufacturing</option>
+                                        <option value="Real Estate">Real Estate</option>
+                                        <option value="Retail">Retail</option>
+                                        <option value="Travel &amp; Tourism">Travel &amp; Tourism</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <div class="error-message text-red-600 text-sm mt-1 hidden"></div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-900 mb-2">Invited By (Member Name)</label>
+                                        <input type="text" id="invited_by" name="invited_by" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200" placeholder="Leave blank if none">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-semibold text-gray-900 mb-2">Preferred Visit Date</label>
+                                        <select id="visit_date" name="visit_date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200">
+                                            <option value="">Next available meeting</option>
+                                            <option value="2025-01-03">Friday, Jan 3, 2025</option>
+                                            <option value="2025-01-10">Friday, Jan 10, 2025</option>
+                                            <option value="2025-01-17">Friday, Jan 17, 2025</option>
+                                            <option value="2025-01-24">Friday, Jan 24, 2025</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm font-semibold text-gray-900 mb-2">Message or Questions</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200" placeholder="Anything you'd like us to know or ask?"></textarea>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <input type="checkbox" id="terms" name="terms" required="" class="mt-1 mr-3">
+                                    <label for="terms" class="text-sm text-gray-600">
+                                        I agree to receive communication about the meeting and understand that my information will be used to coordinate my visit. *
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-bni-red hover:bg-bni-dark-red text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200 shadow-lg">
+                                    Request Invite
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <!-- Success Message -->
+                        <div id="success-message" class="form-success text-center">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fa-solid fa-check text-green-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Thank You for Your Interest!</h3>
+                            <p class="text-lg text-gray-600 mb-6">Our Visitor Host will contact you soon with meeting details and confirmation.</p>
+                            <div class="bg-gray-50 rounded-lg p-6">
+                                <h4 class="font-semibold text-gray-900 mb-2">What Happens Next?</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>â€¢ You'll receive a confirmation email within 24 hours</li>
+                                    <li>â€¢ Our Visitor Host will call you to discuss meeting details</li>
+                                    <li>â€¢ We'll send you meeting agenda and preparation tips</li>
+                                    <li>â€¢ Look forward to seeing you at our next meeting!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Information Section -->
+                <div class="order-1 lg:order-2">
+                    <div class="sticky top-24">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Visitor Information</h2>
+                        
+                        <!-- Meeting Fees -->
+                        <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-indian-rupee-sign text-green-600 text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Visitor Fee</h3>
+                            </div>
+                            <p class="text-gray-600 mb-2">â‚¹300 (covers meeting breakfast)</p>
+                            <p class="text-sm text-gray-500">Our team will inform you about payment details when confirming your visit.</p>
+                        </div>
+                        
+                        <!-- What to Bring -->
+                        <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-briefcase text-blue-600 text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">What to Bring</h3>
+                            </div>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-2 text-sm"></i>
+                                    ~50 business cards to share
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-2 text-sm"></i>
+                                    Professional business attire
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-2 text-sm"></i>
+                                    30-second business introduction
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-2 text-sm"></i>
+                                    Open mind for networking
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Code of Ethics -->
+                        <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-shield-halved text-purple-600 text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Professional Environment</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                We uphold a professional and respectful environment. As a visitor, you'll be given an opportunity to introduce yourself for 30 seconds, so prepare a quick intro about your business!
+                            </p>
+                        </div>
+                        
+                        <!-- Meeting Agenda -->
+                        <div class="bg-white rounded-2xl p-6 shadow-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-list-check text-orange-600 text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Meeting Agenda</h3>
+                            </div>
+                            <ul class="text-gray-600 text-sm space-y-2">
+                                <li>â€¢ Open Networking (6:45 - 7:00 AM)</li>
+                                <li>â€¢ Welcome &amp; Introductions</li>
+                                <li>â€¢ Education Slot</li>
+                                <li>â€¢ Member 60-Second Presentations</li>
+                                <li>â€¢ Feature Presentation</li>
+                                <li>â€¢ Referral &amp; Testimonial Sharing</li>
+                                <li>â€¢ Closing Networking</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Visitor Testimonials -->
+<section id="visitor-testimonials" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">What Visitors Say</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Hear from professionals who visited BNI Tathastu and experienced our welcoming community</p>
+        </div>
+        
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <div class="flex items-start mb-6">
+                    <img src="images/avatar-9.jpg" alt="Visitor Photo" class="w-16 h-16 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-bold text-gray-900">Anita Mehra</h4>
+                        <p class="text-bni-red font-medium">Event Planner â€¢ Now a Member</p>
+                    </div>
+                </div>
+                <blockquote class="text-lg text-gray-700 italic mb-6">
+                    "I was amazed by the warmth and business happening in the room. I got two leads on my first visit! The structured approach and genuine relationships convinced me to join immediately."
+                </blockquote>
+                <div class="flex text-yellow-400">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-2xl p-8">
+                <div class="flex items-start mb-6">
+                    <img src="images/avatar-3.jpg" alt="Visitor Photo" class="w-16 h-16 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-bold text-gray-900">Ravi Malhotra</h4>
+                        <p class="text-bni-red font-medium">Digital Marketing â€¢ Visited 3 Times</p>
+                    </div>
+                </div>
+                <blockquote class="text-lg text-gray-700 italic mb-6">
+                    "The professionalism and quality of members impressed me. Everyone was genuinely interested in helping each other grow. I'm seriously considering membership after seeing the results members achieve."
+                </blockquote>
+                <div class="flex text-yellow-400">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="visitor-faq" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-600">Common questions about visiting BNI Tathastu</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between cursor-pointer" onclick="toggleFAQ('faq1')">
+                        <h3 class="text-lg font-bold text-gray-900">Can I attend more than once as a visitor?</h3>
+                        <i class="fa-solid fa-chevron-down text-bni-red transition-transform duration-200" id="faq1-icon"></i>
+                    </div>
+                    <div id="faq1-content" class="hidden mt-4 text-gray-600">
+                        <p>Yes, you can visit up to 2 times within a 6-month period to fully experience our chapter culture and decide if BNI is right for your business. This allows you to meet different members and understand our referral process better.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between cursor-pointer" onclick="toggleFAQ('faq2')">
+                        <h3 class="text-lg font-bold text-gray-900">Do I have to pay anything to visit?</h3>
+                        <i class="fa-solid fa-chevron-down text-bni-red transition-transform duration-200" id="faq2-icon"></i>
+                    </div>
+                    <div id="faq2-content" class="hidden mt-4 text-gray-600">
+                        <p>There's a nominal visitor fee of â‚¹300 which covers the professional breakfast and meeting materials. This helps us maintain the quality of our meetings and ensures serious visitors who are genuinely interested in networking.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between cursor-pointer" onclick="toggleFAQ('faq3')">
+                        <h3 class="text-lg font-bold text-gray-900">What if my business category conflicts with a current member?</h3>
+                        <i class="fa-solid fa-chevron-down text-bni-red transition-transform duration-200" id="faq3-icon"></i>
+                    </div>
+                    <div id="faq3-content" class="hidden mt-4 text-gray-600">
+                        <p>BNI operates on an exclusive category system - only one person per profession per chapter. If your category is filled, our membership committee will guide you to other BNI chapters in Jaipur or nearby areas where your category might be available.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between cursor-pointer" onclick="toggleFAQ('faq4')">
+                        <h3 class="text-lg font-bold text-gray-900">How early should I arrive for the meeting?</h3>
+                        <i class="fa-solid fa-chevron-down text-bni-red transition-transform duration-200" id="faq4-icon"></i>
+                    </div>
+                    <div id="faq4-content" class="hidden mt-4 text-gray-600">
+                        <p>We recommend arriving by 7:15 AM for open networking time. This gives you 15 minutes to meet members informally, exchange business cards, and get comfortable before the formal meeting begins at 7:30 AM sharp.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between cursor-pointer" onclick="toggleFAQ('faq5')">
+                        <h3 class="text-lg font-bold text-gray-900">What should I expect during my 30-second introduction?</h3>
+                        <i class="fa-solid fa-chevron-down text-bni-red transition-transform duration-200" id="faq5-icon"></i>
+                    </div>
+                    <div id="faq5-content" class="hidden mt-4 text-gray-600">
+                        <p>You'll have 30 seconds to introduce yourself, your business, and what you're looking for. Focus on who you are, what you do, and what kind of referrals would help your business. Practice beforehand to make the most of this opportunity!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Join CTA -->
+<section id="join-cta-section" class="py-16 lg:py-24 bg-bni-red relative overflow-hidden">
+    <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-6">Liked what you saw?</h2>
+            <p class="text-xl lg:text-2xl mb-12 opacity-90">After visiting, if you believe BNI Tathastu is right for your business, apply to join our growing community</p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+                <span class="bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-xl cursor-pointer">
+                    Apply to Join BNI Tathastu
+                </span>
+                <span class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-bni-red transition-colors duration-200 cursor-pointer">
+                    Find Another BNI Chapter
+                </span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold mb-2">Visit</div>
+                    <p class="opacity-80">Experience our meeting</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold mb-2">Apply</div>
+                    <p class="opacity-80">Submit membership application</p>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold mb-2">Grow</div>
+                    <p class="opacity-80">Build your business network</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Background Elements -->
+    <div class="absolute top-10 right-10 w-32 h-32 bg-white bg-opacity-10 rounded-full"></div>
+    <div class="absolute bottom-10 left-10 w-24 h-24 bg-white bg-opacity-10 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full"></div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+            <!-- Chapter Contact Details -->
+            <div class="lg:col-span-2">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-16 w-auto mb-6 bg-white p-2 rounded">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-map-marker-alt text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Venue</div>
+                            <div class="text-gray-300">Hotel Ramada, Tonk Road, Jaipur</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-clock text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Time</div>
+                            <div class="text-gray-300">Fridays, 7:30 AM - 10:30 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-envelope text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Contact Email</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">info@bnitathastu.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-brands fa-whatsapp text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">WhatsApp</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">+91 98765 43210</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Home</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">About Chapter</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Members</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Events</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Success Stories</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Contact</span></li>
+                </ul>
+            </div>
+            
+            <!-- Visitor Resources -->
+            <div>
+                <h4 class="font-bold text-lg mb-4">Visitor Resources</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Meeting Guidelines</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">What to Expect</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Membership Application</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Other BNI Chapters</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Privacy Policy</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">BNI Global</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Social Media & Bottom -->
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-youtube text-2xl"></i>
+                    </span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm">Â© 2025 BNI Global, LLC. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs mt-1">BNI â€“ The world's leading referral organization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Smooth scrolling for anchor links
+function scrollToForm() {
+    document.getElementById('visitor-registration-form').scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+
+// Header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 100) {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.backgroundColor = 'white';
+        header.style.backdropFilter = 'none';
+    }
+});
+
+// FAQ Toggle Function
+function toggleFAQ(faqId) {
+    const content = document.getElementById(faqId + '-content');
+    const icon = document.getElementById(faqId + '-icon');
+    
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+
+// Form Validation and Submission
+document.getElementById('visitor-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Clear previous errors
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(msg => {
+        msg.textContent = '';
+        msg.classList.add('hidden');
+    });
+    
+    let isValid = true;
+    
+    // Validate required fields
+    const requiredFields = ['name', 'email', 'phone', 'industry'];
+    requiredFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        const errorMsg = field.parentNode.querySelector('.error-message');
+        
+        if (!field.value.trim()) {
+            errorMsg.textContent = 'This field is required.';
+            errorMsg.classList.remove('hidden');
+            isValid = false;
+        }
+    });
+    
+    // Validate email format
+    const email = document.getElementById('email');
+    const emailError = email.parentNode.querySelector('.error-message');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (email.value && !emailRegex.test(email.value)) {
+        emailError.textContent = 'Please enter a valid email address.';
+        emailError.classList.remove('hidden');
+        isValid = false;
+    }
+    
+    // Validate phone number
+    const phone = document.getElementById('phone');
+    const phoneError = phone.parentNode.querySelector('.error-message');
+    const phoneRegex = /^[0-9\s\-\+\(\)]{10,}$/;
+    
+    if (phone.value && !phoneRegex.test(phone.value)) {
+        phoneError.textContent = 'Please enter a valid phone number.';
+        phoneError.classList.remove('hidden');
+        isValid = false;
+    }
+    
+    // Check terms checkbox
+    const terms = document.getElementById('terms');
+    if (!terms.checked) {
+        alert('Please agree to the terms to continue.');
+        isValid = false;
+    }
+    
+    if (isValid) {
+        // Hide form and show success message
+        document.getElementById('form-container').classList.add('hide');
+        document.getElementById('success-message').classList.add('show');
+        
+        // Simulate form submission (in real implementation, send to server)
+        console.log('Form submitted successfully');
+        
+        // Scroll to success message
+        document.getElementById('success-message').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+});
+
+// Auto-hide mobile menu on scroll
+let lastScrollTop = 0;
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const header = document.getElementById('header');
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        header.style.transform = 'translateY(-100%)';
+    } else {
+        header.style.transform = 'translateY(0)';
+    }
+    lastScrollTop = scrollTop;
+}, false);
+</script>
+
+
+</body></html>
+

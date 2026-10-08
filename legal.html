@@ -1,0 +1,658 @@
+﻿<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="js/mobile-nav.js"></script>`n    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style>
+        ::webkit-scrollbar { display: none; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(207, 32, 48, 0.95), rgba(207, 32, 48, 0.85)); }
+        .sticky-header { backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.95); }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="font-custom">
+
+<header id="header" class="sticky top-0 z-50 bg-white shadow-sm sticky-header transition-all duration-300">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+            <div class="flex items-center">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-12 w-auto">
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Home</a>
+                <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">About Us</a>
+                <div class="relative group">
+                    <button class="flex items-center text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">
+                        Members
+                        <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="members.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Members Directory</a>
+                        <a href="apply.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Apply</a>
+                    </div>
+                </div>
+                <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Success Stories</a>
+                <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Gallery</a>
+                <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Contact Us</a>
+            </nav>
+            
+            <div class="hidden lg:block">
+                <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg">
+                    Attend a Meeting
+                </a>
+            </div>
+            
+            <button id="mobile-menu-button" class="lg:hidden text-gray-800 p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium py-2">About Us</a>
+                    <div class="space-y-2">
+                        <div class="text-gray-800 font-medium py-2">Members</div>
+                        <div class="pl-4 space-y-2">
+                            <a href="members.html" class="block text-gray-700 hover:text-bni-red py-1">Members Directory</a>
+                            <a href="apply.html" class="block text-gray-700 hover:text-bni-red py-1">Apply</a>
+                        </div>
+                    </div>
+                    <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Success Stories</a>
+                    <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Contact Us</a>
+                    <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">Attend a Meeting</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="privacy-policy-hero" class="relative h-[400px] overflow-hidden">
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 h-full flex items-center">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">Privacy Policy</h1>
+            <p class="text-xl opacity-90">How we collect, use, and protect your personal information</p>
+        </div>
+    </div>
+</section>
+
+<section id="privacy-content" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-8">
+                <p class="text-lg text-gray-600 mb-4">
+                    <strong>Last Updated:</strong> January 15, 2025
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    BNI Tathastu is committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or interact with our chapter.
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                <div id="information-collection">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Information We Collect</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Personal Information</h3>
+                        <p>We collect personal information that you voluntarily provide to us through:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Visitor registration forms</li>
+                            <li>Membership application forms</li>
+                            <li>Contact forms and inquiries</li>
+                            <li>Event registration forms</li>
+                            <li>Newsletter subscriptions</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Information Types</h3>
+                        <p>The types of personal information we may collect include:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Name and contact information (email, phone, address)</li>
+                            <li>Business information (company name, profession, industry)</li>
+                            <li>Professional background and interests</li>
+                            <li>Communication preferences</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="information-usage">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">How We Use Your Information</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <p>We use your personal information solely for BNI Tathastu's purposes, including:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Contacting interested visitors about chapter activities</li>
+                            <li>Processing membership applications and inquiries</li>
+                            <li>Communicating about meetings, events, and chapter updates</li>
+                            <li>Providing requested information about BNI and our chapter</li>
+                            <li>Managing member relationships and chapter operations</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">BNI Network Sharing</h3>
+                        <p>Your information may be shared within the BNI network, including:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>BNI Regional offices for membership processing</li>
+                            <li>BNI Global for system integration and member services</li>
+                            <li>Other BNI chapters for referral and networking purposes (with consent)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="data-security">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Data Security &amp; Storage</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <p>We implement appropriate security measures to protect your personal information:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Secure data storage with encryption protocols</li>
+                            <li>Limited access to authorized personnel only</li>
+                            <li>Regular security audits and updates</li>
+                            <li>Secure transmission of sensitive information</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Third-Party Integration</h3>
+                        <p>We may securely transmit your information to third-party services for operational purposes:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Google Sheets for record-keeping and data management</li>
+                            <li>Email marketing platforms for chapter communications</li>
+                            <li>BNI Connect systems for member management</li>
+                        </ul>
+                        <p class="text-sm text-gray-600 bg-gray-50 p-4 rounded-lg">
+                            <strong>Note:</strong> We do not share your personal information with third parties outside the BNI network for marketing or commercial purposes without your explicit consent.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="cookies-tracking">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Cookies &amp; Website Analytics</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Cookie Usage</h3>
+                        <p>Our website uses cookies for the following purposes:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Website analytics through Google Analytics 4 (GA4)</li>
+                            <li>User login sessions (for member areas)</li>
+                            <li>Improving user experience and site functionality</li>
+                            <li>Remembering user preferences</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Google Analytics</h3>
+                        <p>We use Google Analytics to understand how visitors interact with our website. This service may collect:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Pages visited and time spent on site</li>
+                            <li>Geographic location (city/country level)</li>
+                            <li>Device and browser information</li>
+                            <li>Referral sources</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Cookie Control</h3>
+                        <p>You can control cookie preferences through your browser settings. By using our website, you consent to our use of cookies as described in this policy.</p>
+                    </div>
+                </div>
+
+                <div id="user-rights">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Your Rights &amp; Choices</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <p>You have the following rights regarding your personal information:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li><strong>Access:</strong> Request information about what personal data we hold about you</li>
+                            <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+                            <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+                            <li><strong>Opt-out:</strong> Unsubscribe from communications at any time</li>
+                            <li><strong>Portability:</strong> Request a copy of your data in a portable format</li>
+                        </ul>
+                        
+                        <div class="bg-bni-red bg-opacity-5 border-l-4 border-bni-red p-6 mt-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Contact Us for Privacy Concerns</h4>
+                            <p>For any privacy-related questions, data deletion requests, or to exercise your rights, please contact us:</p>
+                            <ul class="list-none space-y-1 mt-2">
+                                <li><strong>Email:</strong> privacy@bnitathastu.com</li>
+                                <li><strong>Phone:</strong> +91 98765 43210</li>
+                                <li><strong>Address:</strong> BNI Tathastu, Jaipur, Rajasthan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="policy-updates">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Policy Updates</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we make significant changes:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>We will update the "Last Updated" date at the top of this policy</li>
+                            <li>We will notify you via email or website notice</li>
+                            <li>We will obtain consent for material changes that affect how we use your information</li>
+                        </ul>
+                        <p>We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.</p>
+                    </div>
+                </div>
+
+                <div id="consent-agreement">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Consent &amp; Agreement</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <p>By using our website, submitting forms, or engaging with BNI Tathastu services, you acknowledge that you have read, understood, and agree to this Privacy Policy.</p>
+                        <p>If you do not agree with any part of this Privacy Policy, please do not use our website or provide us with your personal information.</p>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg mt-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Questions or Concerns?</h4>
+                            <p>If you have any questions about this Privacy Policy or our data practices, please don't hesitate to contact us using the information provided above.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <span class="bg-bni-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-bni-dark-red transition-colors duration-200 cursor-pointer">
+                        View Terms of Use
+                    </span>
+                    <span class="border-2 border-bni-red text-bni-red px-6 py-3 rounded-lg font-semibold hover:bg-bni-red hover:text-white transition-colors duration-200 cursor-pointer">
+                        Contact Us
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="terms-of-use-hero" class="relative h-[400px] overflow-hidden bg-gray-100">
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-gray-600"></div>
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 h-full flex items-center">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-4">Terms of Use</h1>
+            <p class="text-xl opacity-90">Guidelines and conditions for using our website and services</p>
+        </div>
+    </div>
+</section>
+
+<section id="terms-content" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-8">
+                <p class="text-lg text-gray-600 mb-4">
+                    <strong>Last Updated:</strong> January 15, 2025
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    These Terms of Use govern your access to and use of the BNI Tathastu website and services. By using our website or services, you agree to be bound by these terms.
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                <div id="website-usage">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Website Usage</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">General Purpose</h3>
+                        <p>The information on this website is provided for general purposes related to BNI Tathastu chapter activities, networking opportunities, and business development.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Information Accuracy</h3>
+                        <p>While we strive to maintain accurate and up-to-date information, we do not guarantee that all information is always current or complete, including:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Member details and contact information</li>
+                            <li>Chapter statistics and performance data</li>
+                            <li>Event dates, times, and locations</li>
+                            <li>Meeting schedules and venue information</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Prohibited Activities</h3>
+                        <p>Users must not misuse the website or our services, including:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Sending spam through contact forms</li>
+                            <li>Submitting false or misleading information</li>
+                            <li>Attempting to access restricted areas</li>
+                            <li>Using automated systems to access the website</li>
+                            <li>Interfering with website functionality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="intellectual-property">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Intellectual Property</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Content Ownership</h3>
+                        <p>All content on this website, including but not limited to text, images, graphics, logos, and design elements, are the property of BNI Global, LLC, BNI Tathastu, or their respective owners.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">BNI Trademarks</h3>
+                        <p>The BNI name, logo, and related trademarks are registered trademarks of BNI Global, LLC. These marks may not be used without express written permission from BNI Global.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Usage Restrictions</h3>
+                        <p>You may not:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Reproduce, distribute, or display copyrighted content without permission</li>
+                            <li>Use BNI trademarks or logos for commercial purposes</li>
+                            <li>Modify or create derivative works from website content</li>
+                            <li>Remove copyright or proprietary notices</li>
+                        </ul>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 mt-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Permission Required</h4>
+                            <p>For permission to use BNI trademarks, logos, or substantial portions of website content, please contact BNI Global or BNI Tathastu directly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="member-access">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Member Login &amp; Access</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Account Security</h3>
+                        <p>If you have access to member-only areas of the website:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>You are responsible for maintaining the confidentiality of your login credentials</li>
+                            <li>You must not share your username and password with others</li>
+                            <li>You must notify us immediately of any unauthorized access</li>
+                            <li>You are responsible for all activities that occur under your account</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Acceptable Use</h3>
+                        <p>Member access is provided for legitimate chapter business purposes only. Members must:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Use member areas only for BNI-related activities</li>
+                            <li>Respect the privacy of other members' information</li>
+                            <li>Follow BNI's code of ethics and conduct</li>
+                            <li>Report any technical issues or security concerns</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="limitation-liability">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Limitation of Liability</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Disclaimer</h3>
+                        <p>BNI Tathastu and BNI Global are not liable for any decisions made based on information provided on this website. This includes but is not limited to:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Business decisions based on member recommendations</li>
+                            <li>Financial losses from networking activities</li>
+                            <li>Outcomes from referrals or business connections</li>
+                            <li>Technical issues or website downtime</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Service Availability</h3>
+                        <p>We strive to maintain website availability but cannot guarantee uninterrupted service. We reserve the right to:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Modify or discontinue services at any time</li>
+                            <li>Perform maintenance that may temporarily affect access</li>
+                            <li>Update content and functionality without notice</li>
+                        </ul>
+                        
+                        <div class="bg-red-50 border-l-4 border-red-400 p-6 mt-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Important Notice</h4>
+                            <p>The website and services are provided "as is" without warranties of any kind, either express or implied. Use of this website is at your own risk.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="user-agreement">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">User Agreement</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Acceptance of Terms</h3>
+                        <p>By using our website, submitting forms, or engaging with our services, you acknowledge that you have read, understood, and agree to:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>These Terms of Use</li>
+                            <li>Our Privacy Policy</li>
+                            <li>BNI's global terms and conditions (where applicable)</li>
+                            <li>Any additional terms specific to certain services</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Modifications</h3>
+                        <p>We reserve the right to modify these Terms of Use at any time. Changes will be effective immediately upon posting to the website. Continued use of the website after changes constitutes acceptance of the modified terms.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Governing Law</h3>
+                        <p>These Terms of Use are governed by the laws of India and the state of Rajasthan. Any disputes will be subject to the jurisdiction of courts in Jaipur, Rajasthan.</p>
+                    </div>
+                </div>
+
+                <div id="contact-enforcement">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Contact &amp; Enforcement</h2>
+                    <div class="prose prose-lg text-gray-700 space-y-4">
+                        <p>If you have questions about these Terms of Use or need to report violations, please contact us:</p>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-gray-900 mb-3">BNI Tathastu Contact Information</h4>
+                            <ul class="list-none space-y-2">
+                                <li><strong>Email:</strong> legal@bnitathastu.com</li>
+                                <li><strong>Phone:</strong> +91 98765 43210</li>
+                                <li><strong>Address:</strong> BNI Tathastu Chapter, Jaipur, Rajasthan, India</li>
+                            </ul>
+                        </div>
+                        
+                        <h3 class="text-xl font-semibold text-gray-900 mt-6">Enforcement</h3>
+                        <p>We reserve the right to:</p>
+                        <ul class="list-disc list-inside space-y-2 ml-4">
+                            <li>Investigate violations of these terms</li>
+                            <li>Remove content that violates these terms</li>
+                            <li>Suspend or terminate access for violations</li>
+                            <li>Take legal action when necessary</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <span class="bg-bni-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-bni-dark-red transition-colors duration-200 cursor-pointer">
+                        View Privacy Policy
+                    </span>
+                    <span class="border-2 border-bni-red text-bni-red px-6 py-3 rounded-lg font-semibold hover:bg-bni-red hover:text-white transition-colors duration-200 cursor-pointer">
+                        Back to Home
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cookie-notice-info" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Cookie Notice</h2>
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="flex items-start justify-center mb-6">
+                    <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-cookie-bite text-bni-red text-2xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">We Use Cookies</h3>
+                        <p class="text-gray-700">This website uses cookies to improve user experience and analyze website traffic.</p>
+                    </div>
+                </div>
+                
+                <div class="text-gray-600 space-y-4 mb-8">
+                    <p>We use cookies to:</p>
+                    <ul class="list-disc list-inside space-y-2 text-left max-w-2xl mx-auto">
+                        <li>Improve your browsing experience on our website</li>
+                        <li>Analyze website traffic and user behavior through Google Analytics</li>
+                        <li>Remember your preferences and login sessions</li>
+                        <li>Provide personalized content and features</li>
+                    </ul>
+                    <p>You can control cookie preferences in your browser settings. For more information, please review our <span class="text-bni-red font-semibold cursor-pointer hover:underline">Privacy Policy</span>.</p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <span class="bg-bni-red text-white px-6 py-3 rounded-lg font-semibold hover:bg-bni-dark-red transition-colors duration-200 cursor-pointer">
+                        Accept All Cookies
+                    </span>
+                    <span class="border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:border-bni-red hover:text-bni-red transition-colors duration-200 cursor-pointer">
+                        Manage Preferences
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="legal-navigation" class="py-12 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl font-bold text-gray-900 text-center mb-8">Legal Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 border border-gray-200 rounded-xl hover:border-bni-red transition-colors duration-300">
+                    <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-shield-halved text-bni-red text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Privacy Policy</h3>
+                    <p class="text-gray-600 mb-4">How we collect, use, and protect your personal information</p>
+                    <span class="text-bni-red font-semibold hover:text-bni-dark-red cursor-pointer">Read Policy</span>
+                </div>
+                
+                <div class="text-center p-6 border border-gray-200 rounded-xl hover:border-bni-red transition-colors duration-300">
+                    <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-file-contract text-bni-red text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Terms of Use</h3>
+                    <p class="text-gray-600 mb-4">Guidelines and conditions for using our website and services</p>
+                    <span class="text-bni-red font-semibold hover:text-bni-dark-red cursor-pointer">Read Terms</span>
+                </div>
+                
+                <div class="text-center p-6 border border-gray-200 rounded-xl hover:border-bni-red transition-colors duration-300">
+                    <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-cookie-bite text-bni-red text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Cookie Policy</h3>
+                    <p class="text-gray-600 mb-4">Information about cookies and tracking technologies</p>
+                    <span class="text-bni-red font-semibold hover:text-bni-dark-red cursor-pointer">Learn More</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+            <div class="lg:col-span-2">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-16 w-auto mb-6 bg-white p-2 rounded">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-map-marker-alt text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Venue</div>
+                            <div class="text-gray-300">Hotel Ramada, Tonk Road, Jaipur</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-clock text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Time</div>
+                            <div class="text-gray-300">Fridays, 7:30 AM - 10:30 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-envelope text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Contact Email</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">info@bnitathastu.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-brands fa-whatsapp text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">WhatsApp</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">+91 98765 43210</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Home</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">About Chapter</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Members</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Events</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Success Stories</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Contact</span></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">Resources &amp; Legal</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Visitor Information</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Membership Application</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Meeting Guidelines</span></li>
+                    <li><span class="text-bni-red hover:text-white transition-colors cursor-pointer">Privacy Policy</span></li>
+                    <li><span class="text-bni-red hover:text-white transition-colors cursor-pointer">Terms of Use</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">BNI Global</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-youtube text-2xl"></i>
+                    </span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm">Â© 2025 BNI Global, LLC. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs mt-1">BNI â€“ The world's leading referral organization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 100) {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.backgroundColor = 'white';
+        header.style.backdropFilter = 'none';
+    }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+</script>
+
+
+</body></html>
+

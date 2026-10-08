@@ -1,0 +1,985 @@
+﻿<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="js/mobile-nav.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style>
+        ::webkit-scrollbar { display: none; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(207, 32, 48, 0.95), rgba(207, 32, 48, 0.85)); }
+        .counter-animation { animation: countUp 2s ease-out forwards; }
+        @keyframes countUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .testimonial-slider { scroll-behavior: smooth; }
+        .sticky-header { backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.95); }
+        .stats-card { transition: all 0.3s ease; }
+        .stats-card:hover { transform: translateY(-5px); }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="font-custom">
+
+<!-- Header & Main Navigation -->
+<header id="header" class="sticky top-0 z-50 bg-white shadow-sm sticky-header transition-all duration-300">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-12 w-auto">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Home</a>
+                <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">About Us</a>
+                <div class="relative group">
+                    <button class="flex items-center text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">
+                        Members
+                        <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="members.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Members Directory</a>
+                        <a href="apply.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Apply</a>
+                    </div>
+                </div>
+                <a href="success-stories.html" class="text-bni-red font-semibold transition-colors duration-200">Success Stories</a>
+                <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Gallery</a>
+                <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Contact Us</a>
+            </nav>
+            
+            <!-- CTA Button -->
+            <div class="hidden lg:block">
+                <span class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg cursor-pointer">
+                    Attend a Meeting
+                </span>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-800 p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium py-2">About Us</a>
+                    <div class="space-y-2">
+                        <div class="text-gray-800 font-medium py-2">Members</div>
+                        <div class="pl-4 space-y-2">
+                            <a href="members.html" class="block text-gray-700 hover:text-bni-red py-1">Members Directory</a>
+                            <a href="apply.html" class="block text-gray-700 hover:text-bni-red py-1">Apply</a>
+                        </div>
+                    </div>
+                    <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Success Stories</a>
+                    <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Contact Us</a>
+                    <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">Attend a Meeting</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section id="hero-section" class="relative h-[700px] lg:h-[800px] overflow-hidden">
+    <div class="absolute inset-0">
+        <img class="w-full h-full object-cover" src="images/hero-bg-referrals.png" alt="professional business success celebration with diverse group of professionals shaking hands and celebrating deals, modern office environment, bright lighting">
+        <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 h-full flex items-center">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h1 class="text-4xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+                Referrals &amp; Success
+                <span class="block text-3xl lg:text-5xl xl:text-6xl font-light mt-2">
+                    Stories That Inspire
+                </span>
+            </h1>
+            <p class="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+                Discover the remarkable business growth and success stories generated through BNI Tathastu's powerful referral network.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="apply.html" class="bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-50 transition-colors duration-200 shadow-xl">
+                    Join Our Success
+                </a>
+                <a href="success-stories.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-bni-red transition-colors duration-200">
+                    View All Stories
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 right-10 lg:right-20 animate-bounce">
+        <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+            <i class="fa-solid fa-chart-line text-white text-2xl"></i>
+        </div>
+    </div>
+    <div class="absolute bottom-32 left-10 lg:left-20 animate-pulse">
+        <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full backdrop-blur-sm"></div>
+    </div>
+</section>
+
+<!-- Chapter Performance Statistics -->
+<section id="chapter-scorecard" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="inline-block bg-bni-red bg-opacity-10 text-bni-red px-4 py-2 rounded-full font-semibold mb-4">
+                Our Scorecard
+            </span>
+            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">Chapter Success in Numbers</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Proven results that demonstrate the power of structured networking since chapter inception till date as of 2025</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            <div class="stats-card text-center bg-gradient-to-br from-bni-red to-bni-dark-red rounded-2xl p-8 text-white shadow-xl">
+                <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-handshake text-white text-3xl"></i>
+                </div>
+                <div class="text-4xl lg:text-5xl font-bold mb-2 counter-animation">7,899</div>
+                <h3 class="text-lg font-semibold mb-2">Total Referrals Shared</h3>
+                <p class="text-sm opacity-90">Quality business connections</p>
+            </div>
+            
+            <div class="stats-card text-center bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-8 text-white shadow-xl">
+                <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-indian-rupee-sign text-white text-3xl"></i>
+                </div>
+                <div class="text-3xl lg:text-4xl font-bold mb-2 counter-animation">₹70.86 Cr</div>
+                <h3 class="text-lg font-semibold mb-2">Total Business Passed</h3>
+                <p class="text-sm opacity-90">Thank You For Closed Business</p>
+            </div>
+            
+            <div class="stats-card text-center bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-8 text-white shadow-xl">
+                <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-calculator text-white text-3xl"></i>
+                </div>
+                <div class="text-3xl lg:text-4xl font-bold mb-2 counter-animation">₹89,712</div>
+                <h3 class="text-lg font-semibold mb-2">Average Value per Referral</h3>
+                <p class="text-sm opacity-90">High-quality connections</p>
+            </div>
+            
+            <div class="stats-card text-center bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-8 text-white shadow-xl">
+                <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-users text-white text-3xl"></i>
+                </div>
+                <div class="text-4xl lg:text-5xl font-bold mb-2 counter-animation">223</div>
+                <h3 class="text-lg font-semibold mb-2">Visitors to Date</h3>
+                <p class="text-sm opacity-90">Prospective members</p>
+            </div>
+            
+            <div class="stats-card text-center bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-8 text-white shadow-xl">
+                <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-trophy text-white text-3xl"></i>
+                </div>
+                <div class="text-3xl lg:text-4xl font-bold mb-2 counter-animation">₹1.57 Cr</div>
+                <h3 class="text-lg font-semibold mb-2">Average per Member (Annual)</h3>
+                <p class="text-sm opacity-90">Yearly earning potential</p>
+            </div>
+        </div>
+        
+        <div class="mt-16 text-center">
+            <div class="bg-gray-50 rounded-2xl p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">What These Numbers Mean</h3>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    These impressive statistics represent real business growth, genuine relationships, and the tangible impact of our "Givers GainÂ®" philosophy. Every number tells a story of trust, professionalism, and mutual success within our chapter community.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Referral Stories & Case Studies -->
+<section id="referral-stories" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">Success Case Studies</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Real examples of how BNI Tathastu creates business opportunities and transforms professional relationships</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Case Study 1 -->
+            <div id="case-study-1" class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <div class="relative h-64">
+                    <img class="w-full h-full object-cover" src="images/case-study-1.png" alt="professional business handshake between two business people in modern office, successful deal celebration, corporate partnership">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            ₹50 Lakh Deal
+                        </span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">How a Single BNI Referral Led to a ₹50 Lakh Deal</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Member Rajesh Kumar (Construction Services) received a referral from fellow member Amit Gupta (Financial Planning) to a large corporate client looking to build a new office complex. The client specifically mentioned they chose Rajesh because of the trust factor associated with BNI referrals.
+                    </p>
+                    <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-3">The Impact:</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                ₹50 Lakh initial project value
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                3 additional projects from the same client
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                Long-term business relationship established
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                Client referrals to other potential customers
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img src="images/avatar-4.jpg" alt="Rajesh Kumar" class="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <div class="font-semibold text-gray-900">Rajesh Kumar</div>
+                                <div class="text-sm text-gray-600">Construction Services</div>
+                            </div>
+                        </div>
+                        <span class="text-bni-red font-semibold hover:text-bni-dark-red cursor-pointer">
+                            Read Full Story <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Case Study 2 -->
+            <div id="case-study-2" class="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <div class="relative h-64">
+                    <img class="w-full h-full object-cover" src="images/case-study-2.png" alt="elegant interior design showcase of luxury apartment with modern furniture and professional designer, high-end residential project">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            ₹25 Lakh Project
+                        </span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Interior Design Success Through Real Estate Partnership</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Neha Agarwal (Interior Design) received a referral from real estate member Vikram Singh to design a luxury apartment complex. The client was impressed by the BNI network's credibility and the seamless coordination between members.
+                    </p>
+                    <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-3">Success Metrics:</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                Complete interior design contract secured
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                Client satisfaction rating: 5/5 stars
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                2 more referrals from the same client
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-green-500 mr-2"></i>
+                                Featured in local design magazine
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img src="images/avatar-6.jpg" alt="Neha Agarwal" class="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <div class="font-semibold text-gray-900">Neha Agarwal</div>
+                                <div class="text-sm text-gray-600">Interior Design</div>
+                            </div>
+                        </div>
+                        <span class="text-bni-red font-semibold hover:text-bni-dark-red cursor-pointer">
+                            Read Full Story <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <span class="inline-flex items-center bg-bni-red text-white px-8 py-4 rounded-lg font-semibold hover:bg-bni-dark-red transition-colors duration-200 cursor-pointer text-lg">
+                View All Case Studies
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- Member Testimonials -->
+<section id="member-testimonials" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">What Our Members Say</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Authentic testimonials from BNI Tathastu members about their experience and success</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <!-- Member Testimonials -->
+            <div class="space-y-8">
+                <div class="bg-gray-50 rounded-2xl p-8 border-l-4 border-bni-red">
+                    <div class="flex items-start mb-6">
+                        <img src="images/avatar-2.jpg" alt="Rohit Pareta" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Rohit Pareta</h4>
+                            <p class="text-bni-red font-semibold">Solar Energy Solutions</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 italic leading-relaxed">
+                        "BNI Tathastu has been my best investment â€“ 40% of my revenue now comes through chapter referrals. The structured approach and quality of members is exceptional."
+                    </blockquote>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8 border-l-4 border-bni-red">
+                    <div class="flex items-start mb-6">
+                        <img src="images/avatar-5.jpg" alt="Priya Sharma" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Priya Sharma</h4>
+                            <p class="text-bni-red font-semibold">Digital Marketing Agency</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 italic leading-relaxed">
+                        "The education segments and one-to-ones have helped me understand fellow members' businesses better, leading to more targeted and successful referrals."
+                    </blockquote>
+                </div>
+            </div>
+            
+            <!-- Client/Visitor Testimonials -->
+            <div class="space-y-8">
+                <div class="bg-blue-50 rounded-2xl p-8 border-l-4 border-blue-500">
+                    <div class="flex items-start mb-6">
+                        <img src="images/avatar-8.jpg" alt="Client Testimonial" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Manish Agrawal</h4>
+                            <p class="text-blue-600 font-semibold">Business Client</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 italic leading-relaxed">
+                        "I used the BNI Tathastu member directory to find a realtor. The service was fantastic and I closed my dream home purchase smoothly. The credibility is unmatched."
+                    </blockquote>
+                </div>
+                
+                <div class="bg-green-50 rounded-2xl p-8 border-l-4 border-green-500">
+                    <div class="flex items-start mb-6">
+                        <img src="images/avatar-7.jpg" alt="Visitor Testimonial" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-lg">Sunita Jain</h4>
+                            <p class="text-green-600 font-semibold">Former Visitor, Now Member</p>
+                            <div class="flex text-yellow-400 mt-1">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg text-gray-700 italic leading-relaxed">
+                        "As a visitor, I was impressed by the professionalism and genuine care members showed. Within 3 months of joining, I had my best quarter ever in event management."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <span class="inline-flex items-center text-bni-red font-semibold hover:text-bni-dark-red transition-colors duration-200 cursor-pointer text-lg">
+                Read More Testimonials
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- Awards & Recognition -->
+<section id="awards-recognition" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">Awards &amp; Recognition</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Celebrating our chapter's achievements and recognizing outstanding member contributions</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <!-- Chapter Achievements -->
+            <div id="chapter-achievements" class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-trophy text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">Chapter Milestones</h3>
+                        <p class="text-gray-600">Outstanding performance achievements</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center p-4 bg-yellow-50 rounded-lg">
+                        <i class="fa-solid fa-medal text-yellow-600 text-xl mr-4"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900">Platinum Status 2024</div>
+                            <div class="text-sm text-gray-600">Achieved ₹50 Cr+ business passed milestone</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                        <i class="fa-solid fa-star text-blue-600 text-xl mr-4"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900">Top 5 Chapter in Region</div>
+                            <div class="text-sm text-gray-600">Based on referral quality and business volume</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                        <i class="fa-solid fa-users text-green-600 text-xl mr-4"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900">100% Attendance Record</div>
+                            <div class="text-sm text-gray-600">12 consecutive weeks of perfect attendance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Monthly Network Leaders -->
+            <div id="network-leaders" class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="flex items-center mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-r from-bni-red to-bni-dark-red rounded-full flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-crown text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900">September 2025 Network Leaders</h3>
+                        <p class="text-gray-600">Top performing members this month</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-red-50 rounded-lg">
+                        <div class="flex items-center">
+                            <img src="images/avatar-2.jpg" alt="Rohit Pareta" class="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <div class="font-semibold text-gray-900">Mr. Rohit Pareta</div>
+                                <div class="text-sm text-gray-600">Solar Energy Solutions</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-bni-red font-bold">Highest TYFCB</div>
+                            <div class="text-sm text-gray-600">₹12.5 Lakh</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 bg-blue-50 rounded-lg">
+                        <div class="flex items-center">
+                            <img src="images/avatar-3.jpg" alt="Avadhesh Khandelwal" class="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <div class="font-semibold text-gray-900">Mr. Avadhesh Khandelwal</div>
+                                <div class="text-sm text-gray-600">Financial Planning</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-blue-600 font-bold">Highest Referrals</div>
+                            <div class="text-sm text-gray-600">23 Referrals</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-lg">
+                        <div class="flex items-center">
+                            <img src="images/avatar-5.jpg" alt="Best Networker" class="w-12 h-12 rounded-full mr-3">
+                            <div>
+                                <div class="font-semibold text-gray-900">Ms. Priya Sharma</div>
+                                <div class="text-sm text-gray-600">Digital Marketing</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-green-600 font-bold">Best Networker</div>
+                            <div class="text-sm text-gray-600">One-to-Ones</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Member Achievements -->
+        <div id="member-achievements" class="bg-white rounded-2xl p-8 shadow-lg">
+            <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Gold Club Members</h3>
+            <p class="text-center text-gray-600 mb-8">Members who have successfully brought 6+ new members to the chapter</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center p-4 border-2 border-yellow-200 rounded-lg hover:border-yellow-400 transition-colors">
+                    <img src="images/avatar-4.jpg" alt="Gold Member" class="w-16 h-16 rounded-full mx-auto mb-3">
+                    <div class="font-semibold text-gray-900">Rajesh Kumar</div>
+                    <div class="text-sm text-gray-600 mb-2">Construction Services</div>
+                    <div class="flex justify-center">
+                        <i class="fa-solid fa-medal text-yellow-500 text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="text-center p-4 border-2 border-yellow-200 rounded-lg hover:border-yellow-400 transition-colors">
+                    <img src="images/avatar-6.jpg" alt="Gold Member" class="w-16 h-16 rounded-full mx-auto mb-3">
+                    <div class="font-semibold text-gray-900">Neha Agarwal</div>
+                    <div class="text-sm text-gray-600 mb-2">Interior Design</div>
+                    <div class="flex justify-center">
+                        <i class="fa-solid fa-medal text-yellow-500 text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="text-center p-4 border-2 border-yellow-200 rounded-lg hover:border-yellow-400 transition-colors">
+                    <img src="images/avatar-8.jpg" alt="Gold Member" class="w-16 h-16 rounded-full mx-auto mb-3">
+                    <div class="font-semibold text-gray-900">Vikram Singh</div>
+                    <div class="text-sm text-gray-600 mb-2">Insurance Services</div>
+                    <div class="flex justify-center">
+                        <i class="fa-solid fa-medal text-yellow-500 text-xl"></i>
+                    </div>
+                </div>
+                
+                <div class="text-center p-4 border-2 border-yellow-200 rounded-lg hover:border-yellow-400 transition-colors">
+                    <img src="images/avatar-9.jpg" alt="Gold Member" class="w-16 h-16 rounded-full mx-auto mb-3">
+                    <div class="font-semibold text-gray-900">Amit Gupta</div>
+                    <div class="text-sm text-gray-600 mb-2">Financial Planning</div>
+                    <div class="flex justify-center">
+                        <i class="fa-solid fa-medal text-yellow-500 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Additional Success Metrics -->
+<section id="success-metrics" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">Success by the Numbers</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Detailed breakdown of our chapter's performance across key metrics</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center p-6 bg-gradient-to-br from-red-50 to-red-100 rounded-xl">
+                <div class="w-16 h-16 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-chart-pie text-white text-2xl"></i>
+                </div>
+                <div class="text-3xl font-bold text-bni-red mb-2">85%</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Member Retention Rate</h3>
+                <p class="text-gray-600 text-sm">High satisfaction &amp; value</p>
+            </div>
+            
+            <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
+                <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-trending-up text-white text-2xl"></i>
+                </div>
+                <div class="text-3xl font-bold text-green-600 mb-2">42%</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Average Revenue Growth</h3>
+                <p class="text-gray-600 text-sm">Members' business increase</p>
+            </div>
+            
+            <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
+                <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-clock text-white text-2xl"></i>
+                </div>
+                <div class="text-3xl font-bold text-blue-600 mb-2">18</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Avg. Days to First Referral</h3>
+                <p class="text-gray-600 text-sm">Quick integration</p>
+            </div>
+            
+            <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
+                <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-star text-white text-2xl"></i>
+                </div>
+                <div class="text-3xl font-bold text-purple-600 mb-2">4.9/5</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Member Satisfaction</h3>
+                <p class="text-gray-600 text-sm">Based on surveys</p>
+            </div>
+        </div>
+        
+        <div class="mt-16 bg-gray-50 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Quarterly Business Growth Comparison</h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-gray-900 mb-2">Q1 2025</div>
+                    <div class="text-lg text-bni-red font-semibold">₹15.2 Cr</div>
+                    <div class="text-sm text-gray-600">Business Passed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-gray-900 mb-2">Q2 2025</div>
+                    <div class="text-lg text-bni-red font-semibold">₹18.7 Cr</div>
+                    <div class="text-sm text-gray-600">23% Growth</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-gray-900 mb-2">Q3 2025</div>
+                    <div class="text-lg text-bni-red font-semibold">₹21.3 Cr</div>
+                    <div class="text-sm text-gray-600">14% Growth</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl font-bold text-gray-900 mb-2">Q4 2025</div>
+                    <div class="text-lg text-gray-600 font-semibold">₹25+ Cr</div>
+                    <div class="text-sm text-gray-600">Projected</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Media & Press Coverage -->
+<section id="media-coverage" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-5xl font-bold text-gray-900 mb-4">In the News</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Media coverage and recognition of BNI Tathastu's impact in the business community</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-newspaper text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-gray-900">Rajasthan Patrika</div>
+                        <div class="text-sm text-gray-600">September 2025</div>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">"BNI Tathastu: Transforming Jaipur's Business Landscape"</h3>
+                <p class="text-gray-700 text-sm mb-4">Feature article highlighting the chapter's role in fostering business growth and professional networking in Jaipur.</p>
+                <span class="text-bni-red font-semibold hover:text-bni-dark-red cursor-pointer text-sm">
+                    Read Article <i class="fa-solid fa-external-link ml-1"></i>
+                </span>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-video text-red-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-gray-900">Business Today TV</div>
+                        <div class="text-sm text-gray-600">August 2025</div>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">"Success Stories from BNI Chapters"</h3>
+                <p class="text-gray-700 text-sm mb-4">Television interview featuring our chapter president discussing the power of structured networking.</p>
+                <span class="text-bni-red font-semibold hover:text-bni-dark-red cursor-pointer text-sm">
+                    Watch Video <i class="fa-solid fa-play ml-1"></i>
+                </span>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fa-solid fa-microphone text-green-600 text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-gray-900">All India Radio</div>
+                        <div class="text-sm text-gray-600">July 2025</div>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-3">"Networking for Business Growth"</h3>
+                <p class="text-gray-700 text-sm mb-4">Radio interview with our members sharing tips on effective business networking and referral strategies.</p>
+                <span class="text-bni-red font-semibold hover:text-bni-dark-red cursor-pointer text-sm">
+                    Listen Now <i class="fa-solid fa-volume-up ml-1"></i>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action for Prospective Members -->
+<section id="prospect-cta" class="py-16 lg:py-24 bg-bni-red relative overflow-hidden">
+    <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-6">Imagine What These Referrals Could Do for Your Business</h2>
+            <p class="text-xl lg:text-2xl mb-8 opacity-90">Join BNI Tathastu to be part of these success stories and unlock your business potential</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-handshake text-white text-3xl"></i>
+                    </div>
+                    <div class="text-2xl font-bold mb-2">Quality Referrals</div>
+                    <p class="opacity-90">Pre-qualified business opportunities</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-users text-white text-3xl"></i>
+                    </div>
+                    <div class="text-2xl font-bold mb-2">Professional Network</div>
+                    <p class="opacity-90">Connect with like-minded professionals</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-chart-line text-white text-3xl"></i>
+                    </div>
+                    <div class="text-2xl font-bold mb-2">Business Growth</div>
+                    <p class="opacity-90">Measurable increase in revenue</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+                <span class="bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-xl cursor-pointer">
+                    Attend a Meeting as Guest
+                </span>
+                <span class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-bni-red transition-colors duration-200 cursor-pointer">
+                    Apply for Membership
+                </span>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-lg opacity-90 mb-4">Ready to experience BNI Tathastu?</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-calendar mr-2"></i>
+                        <span>Visit our next meeting</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-clock mr-2"></i>
+                        <span>Fridays, 7:30 AM - 10:30 AM</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-map-marker-alt mr-2"></i>
+                        <span>Hotel Ramada, Jaipur</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Background Elements -->
+    <div class="absolute top-10 right-10 w-32 h-32 bg-white bg-opacity-10 rounded-full"></div>
+    <div class="absolute bottom-10 left-10 w-24 h-24 bg-white bg-opacity-10 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full"></div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+            <!-- Chapter Contact Details -->
+            <div class="lg:col-span-2">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-16 w-auto mb-6 bg-white p-2 rounded">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-map-marker-alt text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Venue</div>
+                            <div class="text-gray-300">Hotel Ramada, Tonk Road, Jaipur</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-clock text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Time</div>
+                            <div class="text-gray-300">Fridays, 7:30 AM - 10:30 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-envelope text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Contact Email</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">info@bnitathastu.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-brands fa-whatsapp text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">WhatsApp</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">+91 98765 43210</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Home</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">About Chapter</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Members</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Events</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Success Stories</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Contact</span></li>
+                </ul>
+            </div>
+            
+            <!-- Resources & Legal -->
+            <div>
+                <h4 class="font-bold text-lg mb-4">Resources</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Visitor Information</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Membership Application</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Meeting Guidelines</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Privacy Policy</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Terms of Use</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">BNI Global</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Social Media & Bottom -->
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-youtube text-2xl"></i>
+                    </span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm">Â© 2025 BNI Global, LLC. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs mt-1">BNI â€“ The world's leading referral organization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 100) {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.backgroundColor = 'white';
+        header.style.backdropFilter = 'none';
+    }
+});
+
+// Counter animation
+function animateCounters() {
+    const counters = document.querySelectorAll('.counter-animation');
+    let hasAnimated = false;
+    
+    if (!hasAnimated) {
+        counters.forEach(counter => {
+            const text = counter.textContent;
+            let target;
+            
+            if (text.includes('₹')) {
+                if (text.includes('Cr')) {
+                    target = 70.86;
+                } else {
+                    target = parseInt(text.replace(/[^\d]/g, ''));
+                }
+            } else {
+                target = parseInt(text.replace(/[^\d]/g, ''));
+            }
+            
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                if (text.includes('₹') && text.includes('Cr')) {
+                    counter.textContent = '₹' + current.toFixed(2) + ' Cr';
+                } else if (text.includes('₹')) {
+                    counter.textContent = '₹' + Math.floor(current).toLocaleString();
+                } else {
+                    counter.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 20);
+        });
+        hasAnimated = true;
+    }
+}
+
+// Intersection Observer for counter animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+        }
+    });
+}, { threshold: 0.5 });
+
+const statsSection = document.getElementById('chapter-scorecard');
+if (statsSection) {
+    observer.observe(statsSection);
+}
+
+// Hover effects for stats cards
+document.querySelectorAll('.stats-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});
+</script>
+
+
+</body></html>
+

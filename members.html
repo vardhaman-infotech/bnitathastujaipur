@@ -1,0 +1,1927 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/mobile-nav.js"></script>
+    
+    <style>
+        ::webkit-scrollbar { display: none; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(207, 32, 48, 0.95), rgba(207, 32, 48, 0.85)); }
+        .sticky-header { backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.95); }
+        .member-card:hover { transform: translateY(-4px); }
+        .search-focus:focus { box-shadow: 0 0 0 3px rgba(207, 32, 48, 0.1); }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="font-custom">
+
+<!-- Header & Main Navigation -->
+<header id="header" class="sticky top-0 z-50 bg-white shadow-sm sticky-header transition-all duration-300">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-12 w-auto">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Home</a>
+                <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">About Us</a>
+                <div class="relative group">
+                    <button class="flex items-center text-bni-red font-semibold">
+                        Members
+                        <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="members.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Members Directory</a>
+                        <a href="apply.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Apply</a>
+                    </div>
+                </div>
+                <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Success Stories</a>
+                <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Gallery</a>
+                <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Contact Us</a>
+            </nav>
+            
+            <!-- CTA Button -->
+            <div class="hidden lg:block">
+                <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg">
+                    Attend a Meeting
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-800 p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium py-2">About Us</a>
+                    <div class="space-y-2">
+                        <div class="text-bni-red font-semibold py-2">Members</div>
+                        <div class="pl-4 space-y-2">
+                            <a href="members.html" class="block text-gray-700 hover:text-bni-red py-1">Members Directory</a>
+                            <a href="apply.html" class="block text-gray-700 hover:text-bni-red py-1">Apply</a>
+                        </div>
+                    </div>
+                    <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Success Stories</a>
+                    <a href="gallery.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Contact Us</a>
+                    <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">Attend a Meeting</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Page Title & Intro Section -->
+<section id="page-header" class="py-16 lg:py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Members Directory</h1>
+            <p class="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed">
+                BNI Tathastu currently has <span class="font-semibold text-bni-red">51 active members</span> across diverse industries. Search or filter to find a trusted professional for your business needs.
+            </p>
+            <div class="bg-gray-50 border-l-4 border-bni-red p-6 rounded-lg text-left max-w-3xl mx-auto">
+                <div class="flex items-start">
+                    <i class="fa-solid fa-shield-halved text-bni-red text-xl mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-gray-900 mb-2">Exclusive Network Guarantee</h3>
+                        <p class="text-gray-700">Only one member per profession/category is allowed, ensuring a truly exclusive network with no internal competition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Search & Filter Bar -->
+<section id="search-filter-section" class="py-8 bg-gray-50 sticky top-20 z-40 border-b border-gray-200">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                    <!-- Search Box -->
+                    <div class="lg:col-span-5">
+                        <div class="relative">
+                            <i class="fa-solid fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" id="member-search" placeholder="Search by name, company, or keywords (e.g., 'Real Estate')" class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent search-focus transition-all duration-200">
+                        </div>
+                    </div>
+                    
+                    <!-- Industry Filter -->
+                    <div class="lg:col-span-3">
+                        <select id="industry-filter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200">
+                            <option value="">All Industries</option>
+                            <option value="real-estate">Real Estate</option>
+                            <option value="solar">Solar Energy</option>
+                            <option value="furniture">Furniture</option>
+                            <option value="legal">Legal Services</option>
+                            <option value="finance">Financial Services</option>
+                            <option value="construction">Construction</option>
+                            <option value="technology">Technology</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="consulting">Consulting</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="education">Education</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Power Team Filter -->
+                    <div class="lg:col-span-3">
+                        <select id="power-team-filter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent transition-all duration-200">
+                            <option value="">All Power Teams</option>
+                            <option value="infra-interior">Infra/Interior</option>
+                            <option value="business">Business</option>
+                            <option value="corporate">Corporate</option>
+                            <option value="hni">HNI</option>
+                            <option value="wedding-events">Wedding & Events</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Clear Filters -->
+                    <div class="lg:col-span-1">
+                        <button id="clear-filters" class="w-full px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-medium transition-colors duration-200">
+                            <i class="fa-solid fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Active Filters Display -->
+                <div id="active-filters" class="mt-4 hidden">
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-sm text-gray-600 mr-2">Active filters:</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Member Statistics -->
+<section id="member-statistics" class="py-8 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-2xl lg:text-3xl font-bold text-bni-red mb-1">51</div>
+                    <div class="text-sm text-gray-600">Total Members</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl lg:text-3xl font-bold text-bni-red mb-1">35</div>
+                    <div class="text-sm text-gray-600">Industries</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl lg:text-3xl font-bold text-bni-red mb-1">5</div>
+                    <div class="text-sm text-gray-600">Power Teams</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-2xl lg:text-3xl font-bold text-bni-red mb-1">100%</div>
+                    <div class="text-sm text-gray-600">Exclusive</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Members Directory Grid -->
+<section id="members-directory" class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Results Counter -->
+            <div class="mb-8">
+                <p class="text-gray-600">
+                    Showing <span id="results-count" class="font-semibold text-bni-red">39</span> members
+                    <span id="filter-description"></span>
+                </p>
+            </div>
+            
+            <!-- Members Grid -->
+            <div id="members-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="finance" data-power-team="hni">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/abhinandan_sharma.jpg" alt="Mr. Abhinandan Sharma" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Abhinandan Sharma</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Ruloans Distribution Services Pvt Ltd</p>
+                        <p class="text-gray-600 text-sm mb-3">Retail Loans</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 8963089343" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/918963089343?text=Hi%20Mr.%20Abhinandan%20Sharma,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:abhi.sharma425@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/abhinandan_sharma.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="corporate">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/ajay_tyagi.jpg" alt="Mr. Ajay Tyagi" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Ajay Tyagi</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Apex Enterprises</p>
+                        <p class="text-gray-600 text-sm mb-3">Water Systems RO</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 8130353130" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/918130353130?text=Hi%20Mr.%20Ajay%20Tyagi,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:apex.enterprisesro@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/ajay_tyagi.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="wedding-events">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/akshat_chaudhary.png" alt="Mr. Akshat Chaudhary" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Akshat Chaudhary</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Pinkcity Developers Inc.</p>
+                        <p class="text-gray-600 text-sm mb-3">Restaurant</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9680885599" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919680885599?text=Hi%20Mr.%20Akshat%20Chaudhary,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:akshat@burdera.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/akshat_chaudhary.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="technology" data-power-team="business">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/anand_vyas.png" alt="Mr. Anand Vyas" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Anand Vyas</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Praxon Technovations Pvt. Ltd.</p>
+                        <p class="text-gray-600 text-sm mb-3">ERP Development</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9930914959" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919930914959?text=Hi%20Mr.%20Anand%20Vyas,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:anand.vyas@praxontech.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/anand_vyas.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="consulting" data-power-team="wedding-events">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/ankur_joshi.png" alt="Pt. Ankur Joshi" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Pt. Ankur Joshi</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Ankur Joshi Astro Vastu Consultant</p>
+                        <p class="text-gray-600 text-sm mb-3">Vaastu Consultant</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9929999009" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919929999009?text=Hi%20Pt.%20Ankur%20Joshi,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:ankurjoshi999@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/ankur_joshi.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="technology" data-power-team="corporate">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/arpeshraj_mathur.png" alt="Mr. Arpesh Raj Mathur" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Arpesh Raj Mathur</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">IT BY IT Professionals</p>
+                        <p class="text-gray-600 text-sm mb-3">Business Trainer</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9829212592" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919829212592?text=Hi%20Mr.%20Arpesh%20Raj%20Mathur,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:arpeshraj@yahoo.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/arpesh_raj_mathur.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="finance">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/ashok_kumar.jpg" alt="Mr. Ashok Kumar" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Ashok Kumar</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">AS Associates</p>
+                        <p class="text-gray-600 text-sm mb-3">Loan and Subsidies</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9887075804" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919887075804?text=Hi%20Mr.%20Ashok%20Kumar,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:aschuru2019@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/ashok_kumar.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="furniture">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/ashwani_kumar.png" alt="Mr. Ashwani Kumar" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Ashwani Kumar</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Innospire Design Studio</p>
+                        <p class="text-gray-600 text-sm mb-3">Furniture Retailer</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9887530300" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919887530300?text=Hi%20Mr.%20Ashwani%20Kumar,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:innospiredesigns@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/ashwani_kumar.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="corporate">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/avadesh_khandelwal.png" alt="Mr. Avadhesh Khandelwal" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Avadhesh Khandelwal</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Saransh Enterprises</p>
+                        <p class="text-gray-600 text-sm mb-3">Corporate Taxi Car</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9828210272" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919828210272?text=Hi%20Mr.%20Avadhesh%20Khandelwal,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:saranshenterprisesindia@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/avadhesh_khandelwal.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="wedding-events">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/bunny_jagwani.png" alt="Mr. Bunny Jagwani" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Bunny Jagwani</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">RS Travels</p>
+                        <p class="text-gray-600 text-sm mb-3">Tours N Travel Agent</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 7891011177" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/917891011177?text=Hi%20Mr.%20Bunny%20Jagwani,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:rstravels789@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/bunny_jagwani.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="business">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/chetan_saini.png" alt="Mr. Chetan Saini" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Chetan Saini</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Load Infotech</p>
+                        <p class="text-gray-600 text-sm mb-3">Whats App, SMS Voice</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9672224446" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919672224446?text=Hi%20Mr.%20Chetan%20Saini,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:chetan.saini33@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/chetan_saini.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="technology" data-power-team="business">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/darshan_kothari.png" alt="Mr. Darshan Kothari" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Darshan Kothari</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Vardhman Infotech</p>
+                        <p class="text-gray-600 text-sm mb-3">Website Development</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 8003734752" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/918003734752?text=Hi%20Mr.%20Darshan%20Kothari,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/darshan_kothari.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="finance" data-power-team="hni">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/divye_agrawal.png" alt="Mr. Divye Agarwal" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Divye Agarwal</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Today Management Consultant Pvt Ltd</p>
+                        <p class="text-gray-600 text-sm mb-3">Commercial Loans</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9829744222" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919829744222?text=Hi%20Mr.%20Divye%20Agarwal,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:info@arhamfin.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/divye_agarwal.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="manufacturing" data-power-team="wedding-events">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/gyanendra_patidar.jpg" alt="Mr. Gyanendra Patidar" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Gyanendra Patidar</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">GP Production</p>
+                        <p class="text-gray-600 text-sm mb-3">Photography</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 8952044832" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/918952044832?text=Hi%20Mr.%20Gyanendra%20Patidar,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:gyanendrapatidar@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/gyanendra_patidar.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="finance" data-power-team="business">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/jaya_lalwani.png" alt="Ms. Jaya Lalwani" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Ms. Jaya Lalwani</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Axis Max Life Insurance Co.</p>
+                        <p class="text-gray-600 text-sm mb-3">Health Insurance</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9828550555" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919828550555?text=Hi%20Ms.%20Jaya%20Lalwani,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:jayalalwani1971@yahoo.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/jaya_lalwani.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="finance" data-power-team="hni">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/jitendra_rathore.png" alt="Mr. Jitendra Rathore" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Jitendra Rathore</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Anu Enterprises</p>
+                        <p class="text-gray-600 text-sm mb-3">Used Car Loans</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 7737919160" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/917737919160?text=Hi%20Mr.%20Jitendra%20Rathore,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:jeetu31987@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/jitendra_rathore.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="hni">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/keerti_sharma.jpg" alt="Ms. Keerti Sharma" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Ms. Keerti Sharma</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">The Divas Club Foundation</p>
+                        <p class="text-gray-600 text-sm mb-3">Womens Club NGO</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9887511935" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919887511935?text=Hi%20Ms.%20Keerti%20Sharma,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:keertinikiljoshi@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/keerti_sharma.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="marketing" data-power-team="business">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/kushal_goyal.png" alt="Mr. Kushal Goyal" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Kushal Goyal</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">KK Impressions</p>
+                        <p class="text-gray-600 text-sm mb-3">Printer - Offset</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9829555542" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919829555542?text=Hi%20Mr.%20Kushal%20Goyal,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:kkimpkush@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/kushal_goyal.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="furniture" data-power-team="infra-interior">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/kushal_saini.png" alt="Mr. Kushal Saini" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Kushal Saini</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Shree Shyam Furniture</p>
+                        <p class="text-gray-600 text-sm mb-3">Carpenter</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 8114467503" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/918114467503?text=Hi%20Mr.%20Kushal%20Saini,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:kushalsaini8114467503@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/kushal_saini.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="technology" data-power-team="corporate">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/mohd_talib.png" alt="Mr. Mohd. Talib" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Mohd. Talib</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Asma Enterprises</p>
+                        <p class="text-gray-600 text-sm mb-3">Computer Retailer</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9950621186" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919950621186?text=Hi%20Mr.%20Mohd.%20Talib,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:asmaenterprises33@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/mohd_talib.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="solar" data-power-team="infra-interior">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/muskan_bohra.png" alt="Ms. Muskan Bohra" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Ms. Muskan Bohra</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Abha Power Project Pvt Ltd</p>
+                        <p class="text-gray-600 text-sm mb-3">Silent Generator Manufacture</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9982303333" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919982303333?text=Hi%20Ms.%20Muskan%20Bohra,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:info@abhapowers.co.in" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/muskan_bohra.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="finance">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/pratigya_nandwana.jpg" alt="Ms. Pratigya Nandwana" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Ms. Pratigya Nandwana</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Finance Doctors</p>
+                        <p class="text-gray-600 text-sm mb-3">Loans MSME Private Emergency Funding</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9829440342" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919829440342?text=Hi%20Ms.%20Pratigya%20Nandwana,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:pratigyanandwana47@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/pratigya_nandwana.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="construction" data-power-team="hni">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/priyank_gupta.png" alt="Ar. Priyank Gupta" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                            <div class="absolute -top-2 -right-2 bg-bni-red text-white text-xs px-2 py-1 rounded-full font-semibold">
+                                President
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Ar. Priyank Gupta</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Varenyam Designs</p>
+                        <p class="text-gray-600 text-sm mb-3">Architect</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9882867934" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919882867934?text=Hi%20Ar.%20Priyank%20Gupta,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:archpriyank@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/priyank_gupta.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="technology">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/rajkumar_vaishnav.png" alt="Mr. Raj Kumar Vaishnav" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Raj Kumar Vaishnav</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Rewathi Innovations Pvt Ltd</p>
+                        <p class="text-gray-600 text-sm mb-3">Web Development</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9571798912" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919571798912?text=Hi%20Mr.%20Raj%20Kumar%20Vaishnav,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:rajkumar@rewathi.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/raj_kumar_vaishnav.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="technology" data-power-team="business">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/rajesh_sharma.png" alt="Mr. Rajesh Sharma" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Rajesh Sharma</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">GOHASHINCLUDE PVT LTD</p>
+                        <p class="text-gray-600 text-sm mb-3">AI ML Development</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9828099744" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919828099744?text=Hi%20Mr.%20Rajesh%20Sharma,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:rajeshsdsharma@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/rajesh_sharma.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="wedding-events">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/rishi_nair.png" alt="Mr. Rishi Nair" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                            <div class="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                                Vice President
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Rishi Nair</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Rikhils Rasoi Delicious Firangi</p>
+                        <p class="text-gray-600 text-sm mb-3">Caterer</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9829012860" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919829012860?text=Hi%20Mr.%20Rishi%20Nair,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:rishinair04@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/rishi_nair.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="solar" data-power-team="infra-interior">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/rohit_pareta.png" alt="Mr. Rohit Pareta" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Rohit Pareta</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Kesrinandan Ventures LLP</p>
+                        <p class="text-gray-600 text-sm mb-3">Solar</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9828118888" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919828118888?text=Hi%20Mr.%20Rohit%20Pareta,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:Info@kesrinandan.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/rohit_pareta.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="real-estate" data-power-team="infra-interior">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/sahaj_poddar.png" alt="Mr. Sahaj Poddar" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                            <div class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                                Secretary
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Sahaj Poddar</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Exol Infrastructure India Ltd</p>
+                        <p class="text-gray-600 text-sm mb-3">Real Estate Commercial Industry Land</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9022228717" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919022228717?text=Hi%20Mr.%20Sahaj%20Poddar,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:sahaj@exol.in" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/sahaj_poddar.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="healthcare" data-power-team="corporate">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/sanjay_saraswat.png" alt="Mr. Sanjay Saraswat" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Sanjay Saraswat</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">V.S. Enterprises</p>
+                        <p class="text-gray-600 text-sm mb-3">Life Wellness Coach</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9414021072" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919414021072?text=Hi%20Mr.%20Sanjay%20Saraswat,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:ssaol1305@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/sanjay_saraswat.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="wedding-events">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/sankalp_vidhani.png" alt="Mr. Sankalp Vidhani" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Sankalp Vidhani</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">R-Square Events Pvt. Ltd.</p>
+                        <p class="text-gray-600 text-sm mb-3">Wedding Planner</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 7976647076" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/917976647076?text=Hi%20Mr.%20Sankalp%20Vidhani,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:sankalpvidhani@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/sankalp_vidhani.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="healthcare" data-power-team="wedding-events">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/sapna_verma.jpg" alt="Ms. Sapna Verma" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Ms. Sapna Verma</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Pearl Blossom Makeup Studio Salon And Academy</p>
+                        <p class="text-gray-600 text-sm mb-3">Beauty and wellness</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 8385024220" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/918385024220?text=Hi%20Ms.%20Sapna%20Verma,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:vermasapna439@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/sapna_verma.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="hni">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/shubham_chhipa.jpg" alt="Mr. Shubham Chhipa" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Shubham Chhipa</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Kismat Collection</p>
+                        <p class="text-gray-600 text-sm mb-3">Textiles</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 7877213196" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/917877213196?text=Hi%20Mr.%20Shubham%20Chhipa,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:frionkandy@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/shubham_chhipa.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="finance" data-power-team="hni">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/sonam_agarwal.png" alt="Ms. Sonam Agarwal" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Ms. Sonam Agarwal</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Shubhika Investments Pvt Ltd</p>
+                        <p class="text-gray-600 text-sm mb-3">Wealth Management</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9782211393" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919782211393?text=Hi%20Ms.%20Sonam%20Agarwal,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:shubhikainvestments@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/sonam_agarwal.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="legal" data-power-team="hni">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/soumitra_bhardwaj.png" alt="Adv. Soumitra Bhardwaj" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Adv. Soumitra Bhardwaj</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Vidhi Mitra</p>
+                        <p class="text-gray-600 text-sm mb-3">Lawyer</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 7104863001" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/917104863001?text=Hi%20Adv.%20Soumitra%20Bhardwaj,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:soumitrabhardwaj@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/soumitra_bhardwaj.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="wedding-events">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/swasti_jain.png" alt="Ms. Swasti Jain" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Ms. Swasti Jain</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Swasti Fine Jewels</p>
+                        <p class="text-gray-600 text-sm mb-3">Fine Jewellery</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9352019873" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919352019873?text=Hi%20Ms.%20Swasti%20Jain,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:swastifinejewels@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/swasti_jain.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/usha_khudia.jpg" alt="Ms. Usha Khudia" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Ms. Usha Khudia</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Florence Fashion Boutique</p>
+                        <p class="text-gray-600 text-sm mb-3">Boutique</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 7665671014" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/917665671014?text=Hi%20Ms.%20Usha%20Khudia,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:ushap28022@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/usha_khudia.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="manufacturing" data-power-team="corporate">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/vikram_kanwani.png" alt="Mr. Vikram Kanwani" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Vikram Kanwani</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Lakhdatar Print Media</p>
+                        <p class="text-gray-600 text-sm mb-3">Led Board Manufacturer</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 9314034567" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/919314034567?text=Hi%20Mr.%20Vikram%20Kanwani,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:lakhdatarprint7979@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/vikram_kanwani.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="technology" data-power-team="business">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/vikram_swami.png" alt="Mr. Vikram Swami" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Vikram Swami</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">ITXITPro Pvt Ltd</p>
+                        <p class="text-gray-600 text-sm mb-3">Digital Marketing</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 8696916912" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/918696916912?text=Hi%20Mr.%20Vikram%20Swami,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:vikram@itxitpro.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/vikram_swami.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+                <!-- Member Card -->
+                <div class="member-card bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6" data-industry="other" data-power-team="corporate">
+                    <div class="text-center">
+                        <div class="relative mb-4">
+                            <img src="images/members/viveke_jain.jpg" alt="Mr. Viveke Jain" class="w-20 h-20 rounded-full mx-auto object-contain bg-white border-4 border-gray-100">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1">Mr. Viveke Jain</h3>
+                        <p class="text-bni-red font-semibold text-sm mb-2">Securrise Solution Pvt Ltd</p>
+                        <p class="text-gray-600 text-sm mb-3">Fire Safety</p>
+                        
+                        <div class="flex justify-center space-x-3 mb-4">
+                            <a href="tel:+91 8058189888" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </a>
+                            <a href="https://wa.me/918058189888?text=Hi%20Mr.%20Viveke%20Jain,%20I%20found%20your%20contact%20through%20BNI%20Tathastu%20website.%20I%20would%20like%20to%20connect%20with%20you%20regarding%20your%20services." target="_blank" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-brands fa-whatsapp text-xs"></i>
+                            </a>
+                            <a href="mailto:infosspl3@gmail.com" class="w-8 h-8 bg-gray-100 hover:bg-bni-red hover:text-white rounded-full flex items-center justify-center text-gray-600 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-envelope text-xs"></i>
+                            </a>
+                        </div>
+                        
+                        <a href="members/viveke_jain.html" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-2 px-4 rounded-lg font-medium text-sm transition-colors duration-200 inline-block text-center">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+<!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="load-more" class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
+                    Load More Members
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Power Teams Overview -->
+<section id="power-teams-overview" class="py-16 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Power Teams</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Specialized groups of complementary professionals working together to maximize referral opportunities</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-building text-bni-red text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Infra/Interior</h3>
+                            <p class="text-gray-600">6 Members</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Real Estate Commercial
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Solar Energy Solutions
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Architecture Services
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Silent Generator
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Carpentry Services
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-briefcase text-bni-red text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Business</h3>
+                            <p class="text-gray-600">8 Members</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Offset Printing
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Digital Marketing
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            ERP Development
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            WhatsApp/SMS Services
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Health Insurance
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-building-columns text-bni-red text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Corporate</h3>
+                            <p class="text-gray-600">7 Members</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Corporate Taxi Services
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Business Training
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Life Wellness Coaching
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            LED Board Manufacturing
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Water Systems RO
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-crown text-bni-red text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">HNI</h3>
+                            <p class="text-gray-600">8 Members</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Used Car Loans
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Architecture Services
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Women's Club NGO
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Textiles
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Wealth Management
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-heart text-bni-red text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">Wedding & Events</h3>
+                            <p class="text-gray-600">8 Members</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Fine Jewellery
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Tours & Travel
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Wedding Planning
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Catering Services
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa-solid fa-check text-bni-red mr-2"></i>
+                            Photography
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Member Success Highlights -->
+<section id="member-success-highlights" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Member Success Highlights</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Real business growth achieved through our member network</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-chart-line text-green-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">₹2.5 Cr+</h3>
+                            <p class="text-gray-600">Business Generated This Year</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Our members have collectively generated over ₹2.5 crores in business through quality referrals in the current financial year.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fa-solid fa-calendar mr-2"></i>
+                        Updated: September 2025
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-arrows-rotate text-blue-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">1,250+</h3>
+                            <p class="text-gray-600">Referrals Exchanged</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Quality referrals exchanged between members this year, with an average conversion rate of 35% - well above industry standards.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fa-solid fa-trending-up mr-2"></i>
+                        35% Conversion Rate
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl p-6 text-center shadow-md">
+                    <div class="text-3xl font-bold text-bni-red mb-2">95%</div>
+                    <div class="text-gray-600">Member Satisfaction</div>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center shadow-md">
+                    <div class="text-3xl font-bold text-bni-red mb-2">88%</div>
+                    <div class="text-gray-600">Weekly Attendance</div>
+                </div>
+                <div class="bg-white rounded-xl p-6 text-center shadow-md">
+                    <div class="text-3xl font-bold text-bni-red mb-2">42</div>
+                    <div class="text-gray-600">Avg. Referrals/Month</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Open Categories CTA -->
+<section id="open-categories-cta" class="py-16 bg-bni-red">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <div class="mb-8">
+                <i class="fa-solid fa-door-open text-6xl mb-6 opacity-80"></i>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Your Category May Be Available!</h2>
+                <p class="text-xl mb-8 opacity-90">
+                    Not seeing your profession listed? We have open opportunities for categories not yet represented in our chapter.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm">
+                    <h3 class="font-bold text-lg mb-2">Currently Open</h3>
+                    <div class="text-sm space-y-1">
+                        <div>• Automotive Services</div>
+                        <div>• Travel &amp; Tourism</div>
+                        <div>• Photography</div>
+                        <div>• Catering Services</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm">
+                    <h3 class="font-bold text-lg mb-2">High Demand</h3>
+                    <div class="text-sm space-y-1">
+                        <div>• Security Services</div>
+                        <div>• Event Management</div>
+                        <div>• Printing Services</div>
+                        <div>• Transportation</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm">
+                    <h3 class="font-bold text-lg mb-2">Benefits</h3>
+                    <div class="text-sm space-y-1">
+                        <div>• Exclusive territory</div>
+                        <div>• Immediate referrals</div>
+                        <div>• No competition</div>
+                        <div>• Growth potential</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-xl">
+                    Check Category Availability
+                </a>
+                <a href="visitors.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-bni-red transition-colors duration-200">
+                    Attend a Meeting
+                </a>
+            </div>
+            
+            <p class="text-sm opacity-80 mt-6">
+                Contact us to verify if your profession is available • First come, first served basis
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact & Meeting Info -->
+<section id="contact-meeting-info" class="py-16 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">Connect With Our Members</h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fa-solid fa-calendar text-bni-red"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">Weekly Meetings</h3>
+                                <p class="text-gray-600 mb-1">Every Friday, 7:30 AM - 10:30 AM</p>
+                                <p class="text-sm text-gray-500">Hotel Ramada, Tonk Road, Jaipur</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fa-solid fa-users text-bni-red"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">Visitor Welcome</h3>
+                                <p class="text-gray-600 mb-1">First-time visitors attend free</p>
+                                <p class="text-sm text-gray-500">Experience our networking format</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fa-brands fa-whatsapp text-bni-red"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-2">Quick Contact</h3>
+                                <p class="text-gray-600 mb-1">WhatsApp: +91 98765 43210</p>
+                                <p class="text-sm text-gray-500">Direct member connections available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Get Member Contact</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your Business</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Member/Service Needed</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent">
+                                <option>Select a category</option>
+                                <option>Real Estate</option>
+                                <option>Legal Services</option>
+                                <option>Financial Services</option>
+                                <option>Construction</option>
+                                <option>Digital Marketing</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bni-red focus:border-transparent">
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-bni-red hover:bg-bni-dark-red text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200">
+                            Connect Me With Member
+                        </button>
+                    </form>
+                    
+                    <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-info-circle text-blue-600 mr-2 mt-1"></i>
+                            <p class="text-sm text-blue-800">
+                                We'll connect you directly with the relevant member for your business needs. All referrals are tracked for quality assurance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+            <div class="lg:col-span-2">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-16 w-auto mb-6 bg-white p-2 rounded">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-map-marker-alt text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Venue</div>
+                            <div class="text-gray-300">Hotel Ramada, Tonk Road, Jaipur</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-clock text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Time</div>
+                            <div class="text-gray-300">Fridays, 7:30 AM – 10:30 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-envelope text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Contact Email</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">info@bnitathastu.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-brands fa-whatsapp text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">WhatsApp</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">+91 98765 43210</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Home</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">About Chapter</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Members</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Events</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Success Stories</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Contact</span></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">Resources</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Visitor Information</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Membership Application</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Meeting Guidelines</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Privacy Policy</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Terms of Use</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">BNI Global</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-youtube text-2xl"></i>
+                    </span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm">© 2025 BNI Global, LLC. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs mt-1">BNI – The world's leading referral organization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Search and Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('member-search');
+    const industryFilter = document.getElementById('industry-filter');
+    const powerTeamFilter = document.getElementById('power-team-filter');
+    const clearFiltersBtn = document.getElementById('clear-filters');
+    const memberCards = document.querySelectorAll('.member-card');
+    const resultsCount = document.getElementById('results-count');
+    const filterDescription = document.getElementById('filter-description');
+    const activeFiltersDiv = document.getElementById('active-filters');
+
+    function filterMembers() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedIndustry = industryFilter.value;
+        const selectedPowerTeam = powerTeamFilter.value;
+        
+        let visibleCount = 0;
+        let activeFilters = [];
+
+        memberCards.forEach(card => {
+            const memberName = card.querySelector('h3').textContent.toLowerCase();
+            const companyName = card.querySelector('.text-bni-red').textContent.toLowerCase();
+            const category = card.querySelector('.text-gray-600').textContent.toLowerCase();
+            const industry = card.getAttribute('data-industry');
+            const powerTeam = card.getAttribute('data-power-team');
+
+            const matchesSearch = searchTerm === '' || 
+                memberName.includes(searchTerm) || 
+                companyName.includes(searchTerm) || 
+                category.includes(searchTerm);
+
+            const matchesIndustry = selectedIndustry === '' || industry === selectedIndustry;
+            const matchesPowerTeam = selectedPowerTeam === '' || powerTeam === selectedPowerTeam;
+
+            if (matchesSearch && matchesIndustry && matchesPowerTeam) {
+                card.style.display = 'block';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Update results count
+        resultsCount.textContent = visibleCount;
+
+        // Update active filters
+        if (searchTerm) activeFilters.push(`Search: "${searchTerm}"`);
+        if (selectedIndustry) activeFilters.push(`Industry: ${industryFilter.options[industryFilter.selectedIndex].text}`);
+        if (selectedPowerTeam) activeFilters.push(`Team: ${powerTeamFilter.options[powerTeamFilter.selectedIndex].text}`);
+
+        if (activeFilters.length > 0) {
+            activeFiltersDiv.innerHTML = `
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-sm text-gray-600 mr-2">Active filters:</span>
+                    ${activeFilters.map(filter => `<span class="bg-bni-red text-white px-3 py-1 rounded-full text-sm">${filter}</span>`).join('')}
+                </div>
+            `;
+            activeFiltersDiv.classList.remove('hidden');
+        } else {
+            activeFiltersDiv.classList.add('hidden');
+        }
+
+        // Update description
+        if (activeFilters.length > 0) {
+            filterDescription.textContent = ` matching your filters`;
+        } else {
+            filterDescription.textContent = '';
+        }
+    }
+
+    function clearAllFilters() {
+        searchInput.value = '';
+        industryFilter.value = '';
+        powerTeamFilter.value = '';
+        filterMembers();
+    }
+
+    // Event listeners
+    searchInput.addEventListener('input', filterMembers);
+    industryFilter.addEventListener('change', filterMembers);
+    powerTeamFilter.addEventListener('change', filterMembers);
+    clearFiltersBtn.addEventListener('click', clearAllFilters);
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 100) {
+            header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.backgroundColor = 'white';
+            header.style.backdropFilter = 'none';
+        }
+    });
+
+    // Load more functionality
+    const loadMoreBtn = document.getElementById('load-more');
+    loadMoreBtn.addEventListener('click', function() {
+        // This would typically load more members from a database
+        alert('Load more functionality would be implemented with backend integration');
+    });
+
+    // Contact form submission
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will connect you with the relevant member shortly.');
+        });
+    }
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+</script>
+
+
+</body></html>

@@ -1,0 +1,832 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/mobile-nav.js"></script>
+    
+    <style>
+        ::webkit-scrollbar { display: none; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(207, 32, 48, 0.95), rgba(207, 32, 48, 0.85)); }
+        .sticky-header { backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.95); }
+        .lightbox { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
+        .lightbox-content { margin: auto; display: block; width: 80%; max-width: 900px; }
+        .lightbox img { width: 100%; height: auto; }
+        .lightbox-close { position: absolute; top: 15px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; }
+        .lightbox-nav { position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 18px; cursor: pointer; background-color: rgba(0,0,0,0.5); border: none; }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+        .gallery-item { transition: all 0.3s ease; }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .masonry-grid { column-count: 4; column-gap: 1.5rem; }
+        @media (max-width: 1280px) { .masonry-grid { column-count: 3; } }
+        @media (max-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 640px) { .masonry-grid { column-count: 1; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 1.5rem; }
+        .load-more-trigger { opacity: 0; height: 1px; }
+        .filter-active { background-color: #CF2030; color: white; }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="font-custom">
+
+<header id="header" class="sticky top-0 z-50 bg-white shadow-sm sticky-header transition-all duration-300">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+            <div class="flex items-center">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-12 w-auto">
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Home</a>
+                <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">About Us</a>
+                <div class="relative group">
+                    <button class="flex items-center text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">
+                        Members
+                        <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="members.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Members Directory</a>
+                        <a href="apply.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Apply</a>
+                    </div>
+                </div>
+                <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Success Stories</a>
+                <a href="gallery.html" class="text-bni-red font-semibold transition-colors duration-200">Gallery</a>
+                <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Contact Us</a>
+            </nav>
+            
+            <div class="hidden lg:block">
+                <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg">
+                    Attend a Meeting
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-800 p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Home</a>
+                    <a href="about.html" class="text-gray-800 hover:text-bni-red font-medium py-2">About Us</a>
+                    <div class="space-y-2">
+                        <div class="text-gray-800 font-medium py-2">Members</div>
+                        <div class="pl-4 space-y-2">
+                            <a href="members.html" class="block text-gray-700 hover:text-bni-red py-1">Members Directory</a>
+                            <a href="apply.html" class="block text-gray-700 hover:text-bni-red py-1">Apply</a>
+                        </div>
+                    </div>
+                    <a href="success-stories.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Success Stories</a>
+                    <a href="gallery.html" class="text-bni-red font-semibold py-2">Gallery</a>
+                    <a href="contact.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Contact Us</a>
+                    <a href="visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">Attend a Meeting</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="gallery-hero" class="relative h-[400px] lg:h-[500px] overflow-hidden">
+    <div class="absolute inset-0">
+        <img class="w-full h-full object-cover" src="images/gallery-1.png" alt="professional business networking event with diverse group taking group photo, bright conference room setting, professional photography style">
+        <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+    
+    <div class="relative z-10 container mx-auto px-4 lg:px-8 h-full flex items-center">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                Gallery
+                <span class="block text-2xl lg:text-3xl font-light mt-2">
+                    BNI Tathastu in Action
+                </span>
+            </h1>
+            <p class="text-xl lg:text-2xl mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+                Snapshots from our meetings and events
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <i class="fa-solid fa-images mr-2"></i>
+                    200+ Photos
+                </div>
+                <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <i class="fa-solid fa-calendar mr-2"></i>
+                    Since 2023
+                </div>
+                <div class="bg-white bg-opacity-20 px-4 py-2 rounded-full backdrop-blur-sm">
+                    <i class="fa-solid fa-users mr-2"></i>
+                    Members &amp; Events
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery-filters" class="py-8 bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex flex-wrap justify-center gap-3">
+            <button class="filter-btn filter-active px-6 py-3 rounded-full font-semibold transition-all duration-200 border-2 border-bni-red" data-filter="all">
+                All Photos
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-200 border-2 border-gray-300 text-gray-700 hover:border-bni-red hover:text-bni-red" data-filter="weekly-meetings">
+                Weekly Meetings
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-200 border-2 border-gray-300 text-gray-700 hover:border-bni-red hover:text-bni-red" data-filter="visitors-day">
+                Visitors Day 2025
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-200 border-2 border-gray-300 text-gray-700 hover:border-bni-red hover:text-bni-red" data-filter="training">
+                Training Sessions
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-200 border-2 border-gray-300 text-gray-700 hover:border-bni-red hover:text-bni-red" data-filter="awards">
+                Awards &amp; Recognition
+            </button>
+            <button class="filter-btn px-6 py-3 rounded-full font-semibold transition-all duration-200 border-2 border-gray-300 text-gray-700 hover:border-bni-red hover:text-bni-red" data-filter="social">
+                Social Events
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="gallery-main" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="masonry-grid" id="gallery-grid">
+            <div class="masonry-item gallery-item cursor-pointer" data-category="weekly-meetings" data-index="0">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-64 object-cover" src="images/gallery-2.png" alt="professional business meeting with people sitting around conference table, bright modern room, networking atmosphere">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Weekly Chapter Meeting</h3>
+                        <p class="text-sm text-gray-600 mb-2">Members during our regular Friday morning session</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Weekly Meetings</span>
+                            <span class="text-xs text-gray-500">March 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="visitors-day" data-index="1">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-80 object-cover" src="images/gallery-3.png" alt="large group photo of business professionals in conference room, diverse crowd, welcoming atmosphere, visitor day event">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Mega Visitor Day</h3>
+                        <p class="text-sm text-gray-600 mb-2">Over 100 professionals joined our special visitor event</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Visitors Day</span>
+                            <span class="text-xs text-gray-500">January 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="weekly-meetings" data-index="2">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-48 object-cover" src="images/gallery-4.png" alt="business professional giving presentation to seated audience, modern meeting room, professional setting">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Member Presentation</h3>
+                        <p class="text-sm text-gray-600 mb-2">Educational segment during weekly meeting</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Weekly Meetings</span>
+                            <span class="text-xs text-gray-500">February 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="training" data-index="3">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-72 object-cover" src="images/gallery-5.png" alt="business training workshop with participants taking notes, professional trainer at whiteboard, learning environment">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Leadership Training</h3>
+                        <p class="text-sm text-gray-600 mb-2">Members attending BNI leadership development workshop</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Training</span>
+                            <span class="text-xs text-gray-500">December 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="awards" data-index="4">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-56 object-cover" src="images/gallery-6.png" alt="award ceremony with business professional receiving trophy, applauding audience, recognition event, formal setting">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Gold Club Recognition</h3>
+                        <p class="text-sm text-gray-600 mb-2">Member receiving Gold Club pin for outstanding referrals</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Awards</span>
+                            <span class="text-xs text-gray-500">November 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="weekly-meetings" data-index="5">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-64 object-cover" src="images/gallery-7.png" alt="business networking breakfast with professionals eating and talking, round tables, morning meeting atmosphere">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Networking Breakfast</h3>
+                        <p class="text-sm text-gray-600 mb-2">Members building relationships over breakfast</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Weekly Meetings</span>
+                            <span class="text-xs text-gray-500">January 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="social" data-index="6">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-60 object-cover" src="images/gallery-8.png" alt="business professionals at outdoor team building event, casual setting, team activities, group bonding">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Team Building Event</h3>
+                        <p class="text-sm text-gray-600 mb-2">Chapter members at annual team building retreat</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Social Events</span>
+                            <span class="text-xs text-gray-500">October 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="visitors-day" data-index="7">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-52 object-cover" src="images/gallery-9.png" alt="business professionals networking and exchanging business cards, visitor event, handshakes and conversations">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Visitor Networking</h3>
+                        <p class="text-sm text-gray-600 mb-2">New connections being made at visitor day</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Visitors Day</span>
+                            <span class="text-xs text-gray-500">January 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="training" data-index="8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-68 object-cover" src="images/gallery-10.png" alt="business workshop with participants in group discussion, collaborative learning, professional development session">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Referral Training</h3>
+                        <p class="text-sm text-gray-600 mb-2">Learning effective referral techniques</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Training</span>
+                            <span class="text-xs text-gray-500">September 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="weekly-meetings" data-index="9">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-56 object-cover" src="images/gallery-11.png" alt="business meeting with members raising hands, voting or participation, engaged audience, democratic process">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Member Voting</h3>
+                        <p class="text-sm text-gray-600 mb-2">Democratic participation in chapter decisions</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Weekly Meetings</span>
+                            <span class="text-xs text-gray-500">March 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="awards" data-index="10">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-64 object-cover" src="images/gallery-12.png" alt="group photo of award winners holding certificates and trophies, celebration atmosphere, achievement recognition">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Annual Awards</h3>
+                        <p class="text-sm text-gray-600 mb-2">Celebrating top performers of the year</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Awards</span>
+                            <span class="text-xs text-gray-500">December 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="masonry-item gallery-item cursor-pointer" data-category="social" data-index="11">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                    <img class="w-full h-60 object-cover" src="images/gallery-13.png" alt="business professionals at evening networking event, cocktail setting, casual conversations, social atmosphere">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-1">Evening Mixer</h3>
+                        <p class="text-sm text-gray-600 mb-2">Casual networking at member social event</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-bni-red bg-red-50 px-2 py-1 rounded">Social Events</span>
+                            <span class="text-xs text-gray-500">August 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-12">
+            <button id="load-more-btn" class="bg-bni-red hover:bg-bni-dark-red text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 shadow-lg">
+                <i class="fa-solid fa-images mr-2"></i>
+                Load More Photos
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="video-gallery" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Chapter Videos</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Watch our chapter in action through these video highlights</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                <div class="aspect-video bg-gray-200 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-bni-dark-red transition-colors duration-200">
+                            <i class="fa-solid fa-play text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Chapter Promo Video</h3>
+                        <p class="text-gray-600 text-sm">2:30 minutes</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">BNI Tathastu Introduction</h3>
+                    <p class="text-gray-600 mb-4">Get to know our chapter, members, and the power of structured networking in this comprehensive overview.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">
+                            <i class="fa-solid fa-eye mr-1"></i>
+                            1,245 views
+                        </span>
+                        <span class="text-sm text-gray-500">January 2025</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-lg">
+                <div class="aspect-video bg-gray-200 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-bni-dark-red transition-colors duration-200">
+                            <i class="fa-solid fa-play text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Member Testimonials</h3>
+                        <p class="text-gray-600 text-sm">3:45 minutes</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Success Stories</h3>
+                    <p class="text-gray-600 mb-4">Hear directly from our members about how BNI Tathastu has transformed their businesses through quality referrals.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">
+                            <i class="fa-solid fa-eye mr-1"></i>
+                            892 views
+                        </span>
+                        <span class="text-sm text-gray-500">December 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery-stats" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Gallery Highlights</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">A visual journey through our chapter's growth and achievements</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center bg-white rounded-2xl p-8 shadow-lg">
+                <div class="w-16 h-16 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-images text-white text-2xl"></i>
+                </div>
+                <div class="text-4xl font-bold text-bni-red mb-2">200+</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Total Photos</h3>
+                <p class="text-gray-600">Captured moments</p>
+            </div>
+            
+            <div class="text-center bg-white rounded-2xl p-8 shadow-lg">
+                <div class="w-16 h-16 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-calendar text-white text-2xl"></i>
+                </div>
+                <div class="text-4xl font-bold text-bni-red mb-2">50+</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Events Documented</h3>
+                <p class="text-gray-600">Since founding</p>
+            </div>
+            
+            <div class="text-center bg-white rounded-2xl p-8 shadow-lg">
+                <div class="w-16 h-16 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-award text-white text-2xl"></i>
+                </div>
+                <div class="text-4xl font-bold text-bni-red mb-2">25+</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Award Ceremonies</h3>
+                <p class="text-gray-600">Recognition events</p>
+            </div>
+            
+            <div class="text-center bg-white rounded-2xl p-8 shadow-lg">
+                <div class="w-16 h-16 bg-bni-red rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-users text-white text-2xl"></i>
+                </div>
+                <div class="text-4xl font-bold text-bni-red mb-2">100+</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-1">Members Featured</h3>
+                <p class="text-gray-600">In our gallery</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="photo-submission" class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gradient-to-r from-bni-red to-bni-dark-red rounded-2xl p-8 lg:p-12 text-white">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-4">Share Your Photos</h2>
+                    <p class="text-xl opacity-90">Have great photos from our events? We'd love to feature them!</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Photo Submission Guidelines</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-white mr-3 mt-1"></i>
+                                <span>High resolution images (minimum 1920x1080)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-white mr-3 mt-1"></i>
+                                <span>Include event name and date</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-white mr-3 mt-1"></i>
+                                <span>Professional quality preferred</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-check text-white mr-3 mt-1"></i>
+                                <span>Members' permission for publication</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="bg-white bg-opacity-20 rounded-xl p-6 mb-6">
+                            <i class="fa-solid fa-cloud-upload-alt text-4xl mb-4"></i>
+                            <p class="font-semibold">Upload Your Photos</p>
+                        </div>
+                        <button class="bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg">
+                            Submit Photos
+                        </button>
+                        <p class="text-sm opacity-80 mt-4">Photos will be reviewed before publication</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="related-pages" class="py-16 lg:py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Explore More</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Discover other aspects of BNI Tathastu</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-calendar-days text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Upcoming Events</h3>
+                <p class="text-gray-600 mb-6">Stay updated with our latest meetings, training sessions, and special events.</p>
+                <button class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+                    View Events
+                </button>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-users text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Our Members</h3>
+                <p class="text-gray-600 mb-6">Meet the diverse professionals who make BNI Tathastu a thriving community.</p>
+                <button class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+                    Meet Members
+                </button>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <div class="w-16 h-16 bg-bni-red bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fa-solid fa-trophy text-bni-red text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Success Stories</h3>
+                <p class="text-gray-600 mb-6">Read inspiring stories of business growth through our referral network.</p>
+                <button class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+                    Read Stories
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="join-us-cta" class="py-16 lg:py-24 bg-bni-red relative overflow-hidden">
+    <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-6">Want to be featured in our gallery?</h2>
+            <p class="text-xl lg:text-2xl mb-12 opacity-90">Join BNI Tathastu and become part of our success story</p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button class="bg-white text-bni-red px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200 shadow-xl">
+                    Attend a Meeting as Guest
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-bni-red transition-colors duration-200">
+                    Apply for Membership
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="absolute top-10 right-10 w-32 h-32 bg-white bg-opacity-10 rounded-full"></div>
+    <div class="absolute bottom-10 left-10 w-24 h-24 bg-white bg-opacity-10 rounded-full"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-white bg-opacity-5 rounded-full"></div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+            <div class="lg:col-span-2">
+                <img src="images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-16 w-auto mb-6 bg-white p-2 rounded">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-map-marker-alt text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Venue</div>
+                            <div class="text-gray-300">Hotel Ramada, Tonk Road, Jaipur</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-clock text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Time</div>
+                            <div class="text-gray-300">Fridays, 7:30 AM – 10:30 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-envelope text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Contact Email</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">info@bnitathastu.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-brands fa-whatsapp text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">WhatsApp</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">+91 98765 43210</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Home</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">About Chapter</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Members</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Events</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Success Stories</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Contact</span></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-4">Resources</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Visitor Information</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Membership Application</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Meeting Guidelines</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Privacy Policy</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Terms of Use</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">BNI Global</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-youtube text-2xl"></i>
+                    </span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm">© 2025 BNI Global, LLC. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs mt-1">BNI – The world's leading referral organization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">×</span>
+    <button class="lightbox-nav lightbox-prev">❮</button>
+    <button class="lightbox-nav lightbox-next">❯</button>
+    <div class="lightbox-content">
+        <img id="lightbox-image" src="" alt="">
+        <div class="text-center mt-4 text-white">
+            <h3 id="lightbox-title" class="text-xl font-bold mb-2"></h3>
+            <p id="lightbox-caption" class="text-gray-300"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentImageIndex = 0;
+let filteredImages = [];
+let allImages = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.querySelector('.lightbox-prev');
+    const lightboxNext = document.querySelector('.lightbox-next');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+
+    allImages = Array.from(galleryItems).map(item => ({
+        element: item,
+        category: item.dataset.category,
+        index: parseInt(item.dataset.index),
+        image: item.querySelector('img'),
+        title: item.querySelector('h3').textContent,
+        caption: item.querySelector('p').textContent
+    }));
+
+    filteredImages = [...allImages];
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            const clickedImage = allImages.find(img => img.element === item);
+            currentImageIndex = filteredImages.findIndex(img => img.index === clickedImage.index);
+            showLightbox();
+        });
+    });
+
+    function showLightbox() {
+        const currentImage = filteredImages[currentImageIndex];
+        lightboxImage.src = currentImage.image.src;
+        lightboxTitle.textContent = currentImage.title;
+        lightboxCaption.textContent = currentImage.caption;
+        lightbox.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function hideLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % filteredImages.length;
+        showLightbox();
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + filteredImages.length) % filteredImages.length;
+        showLightbox();
+    }
+
+    lightboxClose.addEventListener('click', hideLightbox);
+    lightboxNext.addEventListener('click', nextImage);
+    lightboxPrev.addEventListener('click', prevImage);
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            hideLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (lightbox.style.display === 'block') {
+            if (e.key === 'Escape') hideLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        }
+    });
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            
+            filterBtns.forEach(b => {
+                b.classList.remove('filter-active');
+                b.classList.add('border-gray-300', 'text-gray-700');
+                b.classList.remove('border-bni-red', 'text-white');
+            });
+            
+            btn.classList.add('filter-active');
+            btn.classList.remove('border-gray-300', 'text-gray-700');
+            btn.classList.add('border-bni-red');
+
+            if (filter === 'all') {
+                filteredImages = [...allImages];
+                galleryItems.forEach(item => {
+                    item.style.display = 'block';
+                });
+            } else {
+                filteredImages = allImages.filter(img => img.category === filter);
+                galleryItems.forEach(item => {
+                    if (item.dataset.category === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+        });
+    });
+
+    loadMoreBtn.addEventListener('click', () => {
+        loadMoreBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Loading...';
+        
+        setTimeout(() => {
+            loadMoreBtn.innerHTML = '<i class="fa-solid fa-images mr-2"></i>Load More Photos';
+            alert('More photos will be loaded here in the actual implementation!');
+        }, 1000);
+    });
+
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    galleryItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(item);
+    });
+});
+
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 100) {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.backgroundColor = 'white';
+        header.style.backdropFilter = 'none';
+    }
+});
+</script>
+
+
+</body></html>

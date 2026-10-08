@@ -1,0 +1,800 @@
+﻿<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/style.css" rel="stylesheet">
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="../js/mobile-nav.js"></script>    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style>
+        ::webkit-scrollbar { display: none; }
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, rgba(207, 32, 48, 0.95), rgba(207, 32, 48, 0.85)); }
+    </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  </style></head>
+<body class="font-custom">
+
+<!-- Header & Main Navigation -->
+<header id="header" class="sticky top-0 z-50 bg-white shadow-sm transition-all duration-300">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="../images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-12 w-auto">
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="../index.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Home</a>
+                <a href="../about.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">About Us</a>
+                <div class="relative group">
+                    <button class="flex items-center text-bni-red font-semibold">
+                        Members
+                        <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <a href="../members.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Members Directory</a>
+                        <a href="../apply.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-bni-red cursor-pointer">Apply</a>
+                    </div>
+                </div>
+                <a href="../success-stories.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Success Stories</a>
+                <a href="../gallery.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Gallery</a>
+                <a href="../contact.html" class="text-gray-800 hover:text-bni-red font-medium transition-colors duration-200">Contact Us</a>
+            </nav>
+            
+            <!-- CTA Button -->
+            <div class="hidden lg:block">
+                <a href="../contact.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg">
+                    Book 1-2-1 Meeting
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-800 p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="../index.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Home</a>
+                    <a href="../about.html" class="text-gray-800 hover:text-bni-red font-medium py-2">About Us</a>
+                    <div class="space-y-2">
+                        <div class="text-bni-red font-semibold py-2">Members</div>
+                        <div class="pl-4 space-y-2">
+                            <a href="../members.html" class="block text-gray-700 hover:text-bni-red py-1">Members Directory</a>
+                            <a href="../apply.html" class="block text-gray-700 hover:text-bni-red py-1">Apply</a>
+                        </div>
+                    </div>
+                    <a href="../success-stories.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Success Stories</a>
+                    <a href="../gallery.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Gallery</a>
+                    <a href="../contact.html" class="text-gray-800 hover:text-bni-red font-medium py-2">Contact Us</a>
+                    <a href="../visitors.html" class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold text-center mt-4">Attend a Meeting</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Member Profile Section -->
+<section id="member-profile-hero" class="py-12 lg:py-16 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Main Profile Content (Left 2/3) -->
+                <div class="lg:col-span-2 space-y-8">
+                    
+                    <!-- Profile Header -->
+                    <div id="profile-header" class="bg-gray-50 rounded-2xl p-8">
+                        <div class="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-6">
+                            <div class="flex-shrink-0">
+                                <img src="../images/members/ashwani_kumar.png" alt="Mr. Ashwani Kumar" class="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-contain bg-white border-4 border-white shadow-lg">
+                            </div>
+                            <div class="flex-grow">
+                                <div class="mb-2">
+                                    <h1 class="text-3xl lg:text-4xl font-bold text-gray-900">Mr. Ashwani Kumar</h1>
+                                </div>
+                                <h2 class="text-xl lg:text-2xl text-bni-red font-semibold mb-3">
+                                    Innospire Design Studio
+                                </h2>
+                                <p class="text-lg text-gray-600 mb-4">
+                                    Furniture Retailer
+                                </p>
+                                <div class="flex items-center text-gray-500 text-sm">
+                                    <i class="fa-solid fa-calendar-days mr-2"></i>
+                                    <span>BNI Member since 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Professional Details -->
+                    <div id="professional-details" class="bg-white rounded-2xl border border-gray-200 p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Professional Details</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <div class="mb-4">
+                                    <label class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Business Category</label>
+                                    <p class="text-lg font-medium text-gray-900">Furniture Retailer</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Company</label>
+                                    <p class="text-lg font-medium text-gray-900">Innospire Design Studio</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Designation</label>
+                                    <p class="text-lg font-medium text-gray-900">Director</p>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="mb-4">
+                                    <label class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Experience</label>
+                                    <p class="text-lg font-medium text-gray-900">10+ Years</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="text-sm font-semibold text-gray-500 uppercase tracking-wide">BNI Tenure</label>
+                                    <p class="text-lg font-medium text-gray-900">3 Years</p>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Power Team</label>
+                                    <span class="inline-flex items-center text-lg font-medium text-bni-red hover:text-bni-dark-red transition-colors cursor-pointer">
+                                        Furniture Retailer Power Team
+                                        <i class="fa-solid fa-external-link ml-2 text-sm"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Description / Bio -->
+                    <div id="profile-bio" class="bg-white rounded-2xl border border-gray-200 p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">About Me</h3>
+                        
+                        <div class="prose prose-lg max-w-none text-gray-700 space-y-4">
+                            <p class="text-lg leading-relaxed">
+                                I specialize in furniture retailer services for businesses in Jaipur and surrounding areas. With extensive experience in my field, I help clients find the perfect solutions that align with their business objectives and growth plans.
+                            </p>
+                            
+                            <p class="text-lg leading-relaxed">
+                                We pride ourselves on transparency, quality service, and building long-term relationships with our clients. My extensive network and deep market knowledge ensure that every client receives personalized service and the best possible outcomes.
+                            </p>
+                        </div>
+                        
+                        <!-- Services Offered -->
+                        <div class="mt-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Services Offered</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-3"></i>
+                                    <span class="text-gray-700">Furniture Retailer consulting</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-3"></i>
+                                    <span class="text-gray-700">Furniture Retailer services</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-3"></i>
+                                    <span class="text-gray-700">Furniture Retailer solutions</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-3"></i>
+                                    <span class="text-gray-700">Furniture Retailer support</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-3"></i>
+                                    <span class="text-gray-700">Documentation support</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-check text-bni-red mr-3"></i>
+                                    <span class="text-gray-700">Project assistance</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Target Referrals -->
+                        <div class="mt-8">
+                            <h4 class="text-xl font-bold text-gray-900 mb-4">Target Referrals</h4>
+                            <div class="bg-gray-50 rounded-lg p-6">
+                                <div class="space-y-3">
+                                    <div class="flex items-start">
+                                        <i class="fa-solid fa-arrow-right text-bni-red mr-3 mt-1"></i>
+                                        <span class="text-gray-700">Companies seeking furniture retailer services</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fa-solid fa-arrow-right text-bni-red mr-3 mt-1"></i>
+                                        <span class="text-gray-700">Businesses looking for furniture retailer opportunities</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fa-solid fa-arrow-right text-bni-red mr-3 mt-1"></i>
+                                        <span class="text-gray-700">Businesses requiring furniture retailer solutions</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <i class="fa-solid fa-arrow-right text-bni-red mr-3 mt-1"></i>
+                                        <span class="text-gray-700">Companies looking to expand their furniture retailer needs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Member Testimonials -->
+                    <div id="member-testimonials" class="bg-white rounded-2xl border border-gray-200 p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Testimonials &amp; Thank You Notes</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="bg-gray-50 rounded-lg p-6">
+                                <blockquote class="text-lg text-gray-700 italic mb-4">
+                                    "Great experience working with Kumar on our project ₹€“ highly professional and went above and beyond to ensure we found exactly what we needed. The expertise is exceptional!"
+                                </blockquote>
+                                <div class="flex items-center">
+                                    <img src="../images/avatar-4.jpg" alt="Client" class="w-10 h-10 rounded-full mr-3">
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Client Company</div>
+                                        <div class="text-sm text-gray-600">Client</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-6">
+                                <blockquote class="text-lg text-gray-700 italic mb-4">
+                                    "Kumar's referral for our project was spot-on. The understanding of client needs and ability to match the right solutions is remarkable. A true BNI professional!"
+                                </blockquote>
+                                <div class="flex items-center">
+                                    <img src="../images/avatar-5.jpg" alt="BNI Member" class="w-10 h-10 rounded-full mr-3">
+                                    <div>
+                                        <div class="font-semibold text-gray-900">BNI Member</div>
+                                        <div class="text-sm text-gray-600">BNI Tathastu Member - Furniture Retailer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-6">
+                                <blockquote class="text-lg text-gray-700 italic mb-4">
+                                    "Working with Kumar has been a pleasure. The transparency in dealings and commitment to client satisfaction sets them apart in the furniture retailer industry."
+                                </blockquote>
+                                <div class="flex items-center">
+                                    <img src="../images/avatar-3.jpg" alt="BNI Member" class="w-10 h-10 rounded-full mr-3">
+                                    <div>
+                                        <div class="font-semibold text-gray-900">BNI Member</div>
+                                        <div class="text-sm text-gray-600">BNI Tathastu Member - Furniture Retailer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- BNI Achievements -->
+                    <div id="bni-achievements" class="bg-gradient-to-r from-bni-red to-bni-dark-red rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-bold mb-6">BNI Achievements &amp; Contributions</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">127</div>
+                                <div class="text-white opacity-90">Referrals Given</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">89</div>
+                                <div class="text-white opacity-90">Referrals Received</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold mb-2">2.3 Cr</div>
+                                <div class="text-white opacity-90">Business Passed</div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-trophy text-yellow-300 mr-3"></i>
+                                <span>Gold Club Member (brought 6+ members to BNI)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-crown text-yellow-300 mr-3"></i>
+                                <span>Chapter President 2024-2025</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-medal text-yellow-300 mr-3"></i>
+                                <span>Excellence in Networking Award 2023</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-users text-yellow-300 mr-3"></i>
+                                <span>Power Team Leader - Real Estate Division</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Information Sidebar (Right 1/3) -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 space-y-6">
+                        
+                        <!-- Contact Card -->
+                        <div id="contact-card" class="bg-white rounded-2xl border-2 border-bni-red p-6 shadow-lg">
+                            <h3 class="text-xl font-bold text-gray-900 mb-6 text-center">Contact Information</h3>
+                            
+                            <div class="space-y-4">
+                                <!-- Phone -->
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <i class="fa-solid fa-phone text-green-600 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-gray-900">Call</div>
+                                            <div class="text-sm text-gray-600">+91 9887530300</div>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-external-link text-gray-400"></i>
+                                </div>
+                                
+                                <!-- WhatsApp -->
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" data-action="whatsapp">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                            <i class="fa-brands fa-whatsapp text-green-600 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-gray-900">WhatsApp</div>
+                                            <div class="text-sm text-gray-600">Chat directly</div>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-external-link text-gray-400"></i>
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                            <i class="fa-solid fa-envelope text-blue-600 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-gray-900">Email</div>
+                                            <div class="text-sm text-gray-600">innospiredesigns@gmail.com</div>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-external-link text-gray-400"></i>
+                                </div>
+                                
+                                <!-- Website -->
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                            <i class="fa-solid fa-globe text-purple-600 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-gray-900">Website</div>
+                                            <div class="text-sm text-gray-600">Visit company site</div>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-external-link text-gray-400"></i>
+                                </div>
+                                
+                                <!-- LinkedIn -->
+                                <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
+                                    <div class="flex items-center">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                            <i class="fa-brands fa-linkedin text-blue-600 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-gray-900">LinkedIn</div>
+                                            <div class="text-sm text-gray-600">Professional profile</div>
+                                        </div>
+                                    </div>
+                                    <i class="fa-solid fa-external-link text-gray-400"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Share Profile -->
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <button class="w-full flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-3 rounded-lg font-medium transition-colors duration-200">
+                                    <i class="fa-solid fa-share mr-2"></i>
+                                    Share Profile
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Book 1-2-1 Meeting CTA -->
+                        <div id="meeting-cta" class="bg-bni-red rounded-2xl p-6 text-white">
+                            <div class="text-center mb-4">
+                                <i class="fa-solid fa-calendar-plus text-4xl mb-3"></i>
+                                <h3 class="text-xl font-bold mb-2">Book a 1-2-1 Meeting</h3>
+                                <p class="text-white opacity-90">Schedule a personal meeting to discuss potential collaborations</p>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <button class="w-full bg-white text-bni-red px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-200">
+                                    Schedule via Calendly
+                                </button>
+                                <button class="w-full border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-bni-red transition-colors duration-200">
+                                    Send Meeting Request
+                                </button>
+                            </div>
+                            
+                            <div class="mt-4 text-center">
+                                <p class="text-xs text-white opacity-75">Available Mon-Fri, 9 AM - 6 PM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div id="quick-stats" class="bg-white rounded-2xl border border-gray-200 p-6">
+                            <h4 class="font-bold text-gray-900 mb-4 text-center">Quick Stats</h4>
+                            
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Response Time</span>
+                                    <span class="font-semibold text-gray-900">&lt; 2 hours</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Projects Completed</span>
+                                    <span class="font-semibold text-gray-900">150+</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Client Satisfaction</span>
+                                    <div class="flex items-center">
+                                        <div class="flex text-yellow-400 mr-2">
+                                            <i class="fa-solid fa-star text-xs"></i>
+                                            <i class="fa-solid fa-star text-xs"></i>
+                                            <i class="fa-solid fa-star text-xs"></i>
+                                            <i class="fa-solid fa-star text-xs"></i>
+                                            <i class="fa-solid fa-star text-xs"></i>
+                                        </div>
+                                        <span class="font-semibold text-gray-900 text-sm">4.9/5</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">Years in BNI</span>
+                                    <span class="font-semibold text-gray-900">3 Years</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Members / Power Team -->
+<section id="related-members" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Furniture Retailer Power Team</h2>
+                <p class="text-lg text-gray-600">Connect with other professionals in the furniture retailer ecosystem</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center">
+                        <img src="../images/avatar-6.jpg" alt="Interior Designer" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="font-bold text-gray-900 mb-1">Neha Agarwal</h3>
+                        <p class="text-bni-red font-medium text-sm mb-2">Interior Design</p>
+                        <p class="text-gray-600 text-sm mb-4">Commercial &amp; residential interior solutions</p>
+                        <button class="text-bni-red hover:text-bni-dark-red font-medium text-sm transition-colors cursor-pointer">
+                            View Profile ₹†’
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center">
+                        <img src="../images/avatar-3.jpg" alt="Financial Advisor" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="font-bold text-gray-900 mb-1">BNI Member</h3>
+                        <p class="text-bni-red font-medium text-sm mb-2">Home Loans</p>
+                        <p class="text-gray-600 text-sm mb-4">Mortgage &amp; property financing solutions</p>
+                        <button class="text-bni-red hover:text-bni-dark-red font-medium text-sm transition-colors cursor-pointer">
+                            View Profile ₹†’
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center">
+                        <img src="../images/avatar-8.jpg" alt="Legal Services" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="font-bold text-gray-900 mb-1">Vikram Singh</h3>
+                        <p class="text-bni-red font-medium text-sm mb-2">Legal Services</p>
+                        <p class="text-gray-600 text-sm mb-4">Property law &amp; documentation expert</p>
+                        <button class="text-bni-red hover:text-bni-dark-red font-medium text-sm transition-colors cursor-pointer">
+                            View Profile ₹†’
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center">
+                        <img src="../images/avatar-4.jpg" alt="Construction" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+                        <h3 class="font-bold text-gray-900 mb-1">Rajesh Kumar</h3>
+                        <p class="text-bni-red font-medium text-sm mb-2">Construction</p>
+                        <p class="text-gray-600 text-sm mb-4">Commercial &amp; industrial construction</p>
+                        <button class="text-bni-red hover:text-bni-dark-red font-medium text-sm transition-colors cursor-pointer">
+                            View Profile ₹†’
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="bg-bni-red hover:bg-bni-dark-red text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+                    View Complete Power Team
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Contact Form Modal Trigger -->
+<section id="contact-form-section" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Ready to Connect?</h2>
+            <p class="text-lg text-gray-600 mb-8">Get in touch to discuss your furniture retailer needs or potential collaboration opportunities</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <button class="bg-bni-red hover:bg-bni-dark-red text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200 shadow-lg">
+                    Schedule 1-2-1 Meeting
+                </button>
+                <button class="border-2 border-bni-red text-bni-red hover:bg-bni-red hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors duration-200">
+                    Send Message
+                </button>
+            </div>
+            
+            <div class="mt-8 text-sm text-gray-500">
+                <p>Response guaranteed within 2 hours during business hours</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12">
+            <!-- Chapter Contact Details -->
+            <div class="lg:col-span-2">
+                <img src="../images/bni-jaipur-tathastu-logo.jpg" alt="BNI Tathastu Logo" class="h-16 w-auto mb-6 bg-white p-2 rounded">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-map-marker-alt text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Venue</div>
+                            <div class="text-gray-300">Hotel Ramada, Tonk Road, Jaipur</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-clock text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Meeting Time</div>
+                            <div class="text-gray-300">Fridays, 7:30 AM - 10:30 AM</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-envelope text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Contact Email</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">innospiredesigns@gmail.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <i class="fa-brands fa-whatsapp text-bni-red mr-3 mt-1"></i>
+                        <div>
+                            <div class="font-semibold">WhatsApp</div>
+                            <span class="text-gray-300 hover:text-white cursor-pointer">+91 9887530300</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Home</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">About Chapter</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Members</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Events</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Success Stories</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Contact</span></li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div>
+                <h4 class="font-bold text-lg mb-4">Resources</h4>
+                <ul class="space-y-2">
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Visitor Information</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Membership Application</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Power Teams</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">Meeting Guidelines</span></li>
+                    <li><span class="text-gray-300 hover:text-white transition-colors cursor-pointer">BNI Global</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Social Media & Bottom -->
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </span>
+                    <span class="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-brands fa-youtube text-2xl"></i>
+                    </span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm">₹© 2025 BNI Global, LLC. All rights reserved.</p>
+                    <p class="text-gray-500 text-xs mt-1">BNI ₹€“ The world's leading referral organization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Contact action handlers
+document.addEventListener('DOMContentLoaded', function() {
+    // Phone call handler
+    const phoneElements = document.querySelectorAll('[data-action="call"]');
+    phoneElements.forEach(el => {
+        el.addEventListener('click', function() {
+            window.open('tel:+919876543210', '_self');
+        });
+    });
+    
+    // WhatsApp handler
+    const whatsappElements = document.querySelectorAll('[data-action="whatsapp"]');
+    whatsappElements.forEach(el => {
+        el.addEventListener('click', function() {
+            const message = encodeURIComponent('Hi Ashwani Kumar, I got your contact from BNI Tathastu website. I would like to discuss...');
+            window.open(`https://wa.me/919887530300?text=${message}`, '_blank');
+        });
+    });
+    
+    // Email handler
+    const emailElements = document.querySelectorAll('[data-action="email"]');
+    emailElements.forEach(el => {
+        el.addEventListener('click', function() {
+            window.open('mailto:innospiredesigns@gmail.com', '_self');
+        });
+    });
+    
+    // Share profile handler
+    const shareButton = document.querySelector('[data-action="share"]');
+    if (shareButton) {
+        shareButton.addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Mr. Ashwani Kumar - BNI Tathastu',
+                    text: 'Connect with Mr. Ashwani Kumar from BNI Tathastu for furniture retailer solutions',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback: copy to clipboard
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Profile link copied to clipboard!');
+                });
+            }
+        });
+    }
+});
+
+// Header scroll effect
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 100) {
+        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+    } else {
+        header.style.backgroundColor = 'white';
+        header.style.backdropFilter = 'none';
+    }
+});
+
+// Add click handlers to contact buttons
+document.addEventListener('DOMContentLoaded', function() {
+    // Add data attributes to contact elements for easier handling
+    const contactElements = document.querySelectorAll('#contact-card .cursor-pointer');
+    contactElements.forEach((el, index) => {
+        switch(index) {
+            case 0: // Phone
+                el.setAttribute('data-action', 'call');
+                break;
+            case 1: // WhatsApp
+                el.setAttribute('data-action', 'whatsapp');
+                break;
+            case 2: // Email
+                el.setAttribute('data-action', 'email');
+                break;
+            case 3: // Website
+                el.addEventListener('click', () => window.open('https://innospiredesignstudio.com', '_blank'));
+                break;
+            case 4: // LinkedIn
+                el.addEventListener('click', () => window.open('https://linkedin.com/in/ashwani_kumar', '_blank'));
+                break;
+        }
+    });
+    
+    // Share profile button
+    const shareBtn = document.querySelector('#contact-card button');
+    if (shareBtn) {
+        shareBtn.setAttribute('data-action', 'share');
+    }
+});
+</script>
+
+
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
